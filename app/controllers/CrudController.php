@@ -90,7 +90,7 @@ class CrudController extends FrontController {
 		if ($mId = $oEntity->insert(true)) {
 			$this->postInsert($mId);
 			// clear cache
-			$sSqlCacheFile = TMP_DIR . '/sql/collection/'.$this->_ctrlName.'-'.$this->_sActionName.'';
+			$sSqlCacheFile = TMP_DIR . '/sql/collection/'.$this->_ctrlName.'-'.$this->_actionName.'';
 
 			$this->raiseInfo('Wpis '.(isset($sName) ? '<strong>'.$sName.'</strong>' : '').' został utworzony.');
 

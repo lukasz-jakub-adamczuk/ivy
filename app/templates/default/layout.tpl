@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-{include file='header.tpl'}
+{include file='head.tpl'}
 <body>
 	<main>
 		{if $smarty.const.DEBUG_MODE}{include file='debug.tpl'}{/if}
