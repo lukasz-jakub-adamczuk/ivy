@@ -1,0 +1,31 @@
+cols:
+  id:
+    type: checkbox
+    value: id_story_comment
+    class: mass-checkbox
+    width: 25
+    sortable: false
+  title:
+    type: link
+    link: [/story-comment/, id_story_comment]
+    width: '*'
+  author:
+    # type: link
+    # link: [/user/, id_user]
+    width: 20%
+  verified:
+    type: tag
+    icon: checkmark
+    width: 5%
+  visible:
+    type: tag
+    icon: visible
+    width: 5%
+    sortable: false
+  deleted:
+    type: tag
+    icon: trash
+    width: 5%
+  creation-date:
+    type: date
+    width: 15%

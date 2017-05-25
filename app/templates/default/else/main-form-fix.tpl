@@ -1,0 +1,4 @@
+<!-- <section> -->
+								<!-- this paragraph fills .main-form div which doesn't have width specified -->
+								<p class="visually-hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor tincidunt quam at gravida. Suspendisse vel ligula quis diam mattis dapibus. Quisque molestie pulvinar nulla, sit amet semper elit. Donec sed augue nec odio viverra vehicula. Ut sit amet justo quam. Nam ut consequat dui, vel bibendum dui. Praesent dui eros, tempus vitae dolor nec, volutpat tristique felis. Duis sagittis, lacus id posuere pharetra, metus diam malesuada felis, sed posuere elit lacus sit amet metus. Nam pharetra ornare ipsum vitae semper. Etiam aliquam sem id pretium convallis. Suspendisse vehicula vehicula tincidunt. Pellentesque mattis, urna et venenatis posuere, nunc metus pretium purus, lobortis volutpat enim ante non leo. Mauris condimentum et diam ut adipiscing. In hendrerit volutpat enim ut semper.</p>
+							<!-- </section> -->

@@ -1,0 +1,120 @@
+fragment-type:
+  game-info: Informacje (gra)
+  music-info: Informacje (album)
+  logo-image: Obraz (logotyp)
+  cover-image: Obraz (tło)
+  notice: Komunikat
+system:
+  nes:
+    name: Nintendo Entertainment System
+    abbr: NES
+    group: nintendo
+  snes:
+    name: Super Nintendo Entertainment System
+    abbr: SNES
+    group: nintendo
+  n64:
+    name: Nintendo 64
+    abbr: N64
+    group: nintendo
+  ngc:
+    name: Nintendo GameGube
+    abbr: NGC
+    group: nintendo
+  wii:
+    name: Wii
+    abbr: Wii
+    group: nintendo
+  wiiu:
+    name: Wii U
+    abbr: Wii U
+    group: nintendo
+  gb:
+    name: Game Boy
+    abbr: GB
+    group: nintendo
+  gbc:
+    name: Game Boy Color
+    abbr: GBC
+    group: nintendo
+  gba:
+    name: Game Boy Advance
+    abbr: GBA
+    group: nintendo
+  ds:
+    name: Nintendo DS
+    abbr: DS
+    group: nintendo
+  3ds:
+    name: Nintendo 3DS
+    abbr: 3DS
+    group: nintendo
+
+  ps:
+    name: PlayStation
+    abbr: PS
+    group: sony
+  ps2:
+    name: PlayStation 2
+    abbr: PS2
+    group: sony
+  ps3:
+    name: PlayStation 3
+    abbr: PS3
+    group: sony
+  ps4:
+    name: PlayStation 4
+    abbr: PS4
+    group: sony
+  psp:
+    name: PlayStation Portable
+    abbr: PSP
+    group: sony
+  psv:
+    name: PlayStation Vita
+    abbr: PSVita
+    group: sony
+
+  ss:
+    name: Sega Saturn
+    abbr: SS
+    group: sega
+  dc:
+    name: Dreamcast
+    abbr: DC
+    group: sega
+
+  xbox:
+    name: Xbox
+    abbr: Xbox
+    group: microsoft
+  x360:
+    name: Xbox 360
+    abbr: X360
+    group: microsoft
+  xone:
+    name: Xbox One
+    abbr: XOne
+    group: microsoft
+
+  pc:
+    name: Komputery osobiste
+    abbr: PC
+    group: others
+  wsc:
+    name: WonderSwan Color
+    abbr: WS Color
+    # group: bandai
+    group: others
+  gizmondo:
+    name: Gizmondo
+    abbr: Gizmondo
+    # group: tiger-telematics
+    group: others
+  ngage:
+    name: Nokia N-Gage
+    abbr: N-Gage
+    # group: nokia
+    group: others
+
+

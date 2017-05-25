@@ -1,0 +1,52 @@
+groups:
+  basic:
+tabs:
+  basic-data:
+fieldsets:
+  main:
+    collapsed: false
+  sub:
+    collapsed: false
+elements:
+  id:
+    prefix: ""
+    value: id_trophy
+    render: true
+    visible: false
+  name:
+    type: text
+    class: w40p
+  slug:
+    type: text
+    class: w80p
+  description:
+    type: textarea
+    class: w80p
+    rules:
+      - lowercase
+      - required
+  creation-date:
+    type: text
+    class: w20p
+  modification-date:
+    type: text
+    class: w20p
+  type:
+    type: select
+    default: null
+    values: [bronze, silver, gold, platinum]
+  visible:
+    type: radio
+    default: 1
+    values:
+      0: no
+      1: yes
+  deleted:
+    type: radio
+    default: 0
+    values:
+      0: no
+      1: yes
+submits:
+  none:
+    ok:

@@ -1,0 +1,26 @@
+cols:
+  id:
+    type: checkbox
+    value: id_trophy
+    class: mass-checkbox
+    width: 25
+    sortable: false
+  name:
+    type: link
+    link: [/trophy/, id_trophy]
+    width: '20%'
+  description:
+    # type: link
+    # link: [/user/, id_user]
+    width: '*'
+  category:
+    # type: link
+    # link: [/category/, id_category]
+    width: 20%
+    escape: true
+  type:
+    type: tag
+    width: 10%
+  creation-date:
+    type: date
+    width: 20%

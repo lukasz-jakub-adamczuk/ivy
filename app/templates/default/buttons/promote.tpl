@@ -1,0 +1,1 @@
+{if isset($promote) and $promote eq true}<button name="button" type="sumbit" class="button text color" value="promote" data-js="promote">Promuj</button>{/if}

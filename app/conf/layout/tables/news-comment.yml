@@ -1,0 +1,34 @@
+cols:
+  id:
+    type: checkbox
+    value: id_news_comment
+    class: mass-checkbox
+    width: 25
+    sortable: false
+  comment:
+    type: link
+    link: [/news-comment/, id_news_comment]
+    # escape: true
+    modifiers:
+      truncate: '80'
+    width: '*'
+  author:
+    # type: link
+    # link: [/user/, id_user]
+    width: 20%
+  verified:
+    type: tag
+    icon: checkmark
+    width: 5%
+  visible:
+    type: tag
+    icon: visible
+    width: 5%
+    sortable: false
+  deleted:
+    type: tag
+    icon: trash
+    width: 5%
+  creation-date:
+    type: date
+    width: 15%

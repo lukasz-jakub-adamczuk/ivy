@@ -1,0 +1,36 @@
+cols:
+  id:
+    type: checkbox
+    value: id_change_log
+    class: mass-checkbox
+    width: 25
+    sortable: false
+  object:
+    type: link
+    link: [/, table, /, id_record]
+    # value: ['table #', id_record]
+    class: black
+    width: '*'
+    escape: true
+
+  # log:
+    # type: link
+    # link: [/article/, id_article]
+    # width: '*'
+  author:
+    type: link
+    link: [/user/, id_author]
+    class: black
+    width: 20%
+  type:
+    type: tag
+    tags:
+      read: read
+      create: create
+      update: update
+      delete: delete
+    width: 10%
+  creation-date:
+    # type: date
+    align: center
+    width: 20%

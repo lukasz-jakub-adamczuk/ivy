@@ -1,0 +1,1 @@
+{if isset($aFields.visible) and $aFields.visible eq 0}<button name="button" type="sumbit" class="btn btn-default" value="publish" data-js="publish">Publikuj</button>{/if}

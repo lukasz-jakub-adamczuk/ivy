@@ -1,0 +1,42 @@
+cols:
+  id:
+    type: checkbox
+    value: id_article_verdict
+    class: mass-checkbox
+    width: 25
+    sortable: false
+  verdict:
+    type: link
+    link: [/article-verdict/, id_article_verdict]
+    width: '*'
+    escape: true
+    modifiers:
+      truncate: 80:true
+  author:
+    type: link
+    link: [/user/, id_author]
+    class: black
+    width: 20%
+  article:
+    type: link
+    link: [/article/, id_article]
+    class: black
+    value: [category, ' - ', title]
+    width: 20%
+    escape: true
+  rating:
+    type: tag
+    icon: verdict
+    width: 5%
+  visible:
+    type: tag
+    tags:
+      0: false
+      1: black
+    class:
+      1: icon-visible
+    icon: visible
+    width: 5%
+  creation-date:
+    type: date
+    width: 15%

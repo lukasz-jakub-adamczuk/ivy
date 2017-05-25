@@ -1,0 +1,27 @@
+urls:
+  # home:
+    # name:
+    # url: not necessary
+    # icon:
+  news:
+    name: Aktualności
+    icon:
+  article:
+    name: Artykuły
+  article-category:
+    name: Kategorie
+  article-comment:
+    name: Komentarze
+  article-verdict:
+    name: Werdykty
+  fragment:
+    name: Fragmenty
+    icon: leaf
+  lobby:
+    name: Poczekalnia
+  file-manager:
+    name: Pliki
+  user:
+    name: Użytkownicy
+  cup:
+    name: Mistrzostwa

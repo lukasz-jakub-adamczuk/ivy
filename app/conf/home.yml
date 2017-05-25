@@ -1,0 +1,121 @@
+boxes:
+  news:
+    header: Aktualności
+    links:
+      list:
+        url: /news
+        name: lista
+      add:
+        url: /news/add
+        name: dodaj
+      comment:
+        url: /news-comment
+        name: komentarze
+      postman:
+        url: /postman/index/n4g
+        name: listonosz
+        icon: feed
+  article:
+    icon: game
+    header: Gry
+    links:
+      list:
+        url: /article
+        name: lista
+      add:
+        url: /article/add
+        name: dodaj
+      comment:
+        url: /article-comment
+        name: komentarze
+      category:
+        url: /article-category
+        name: kategorie
+  story:
+    header: Publicystyka
+    links:
+      list:
+        url: /story
+        name: lista
+      add:
+        url: /story/add
+        name: dodaj
+      comment:
+        url: /story-comment
+        name: komentarze
+      category:
+        url: /story-category
+        name: kategorie
+  verdict:
+    header: Werdykty
+    links:
+      list:
+        url: /article-verdict
+        name: lista
+      add:
+        url: /article-verdict/add
+        name: dodaj
+  fragment:
+    header: Fragmenty
+    links:
+      list:
+        url: /fragment
+        name: lista
+      add:
+        url: /fragment/add
+        name: dodaj
+  comment:
+    header: Komentarze
+    links:
+      news:
+        url: /news-comment
+        name: lista
+      game:
+        url: /article-comment
+        name: lista
+      story:
+        url: /story-comment
+        name: lista
+      user:
+        url: /user-comment
+        name: lista
+      # add:
+      #   url: /fragment/add
+      #   name: dodaj
+  lobby:
+    header: Poczekalnia
+    links:
+      list:
+        url: /lobby
+        name: lista
+      # add:
+      #   url: /fragment/add
+      #   name: dodaj
+  file-manager:
+    icon: folder
+    header: Pliki
+    links:
+      list:
+        url: /file-manager
+        name: lista
+      # add:
+      #   url: /fragment/add
+      #   name: dodaj
+  user:
+    header: Użytkownicy
+    links:
+      list:
+        url: /user
+        name: lista
+      # add:
+      #   url: /user/add
+      #   name: dodaj
+  cup:
+    header: Mistrzostwa
+    links:
+      list:
+        url: /cup
+        name: lista
+      add:
+        url: /cup/add
+        name: dodaj

@@ -1,0 +1,11 @@
+cols:
+  group:
+    name: Grupa
+  battles:
+    name: Pojedynki
+  points:
+    name: Punkty
+  stats:
+    name: Bilans
+    title: Punkty zdobyte i stracone
+  

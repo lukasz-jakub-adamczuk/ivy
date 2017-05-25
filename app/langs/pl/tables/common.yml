@@ -1,0 +1,42 @@
+cols:
+  id:
+    name: ID
+  name:
+    name: Nazwa
+  title:
+    name: Tytuł
+  description:
+    name: Opis
+  author:
+    name: Autor
+  category:
+    name: Kategoria
+  creation-date:
+    name: Dodano
+  idx:
+    name: Kol.
+    title: Kolejność
+
+sort:
+  asc: Sortuj rosnąco
+  desc: Sortuj malejąco
+
+types:
+  checkbox:
+    check-single: Zaznacz pojedynczą pozycję
+    check-all: Zaznacz wszystkie pozycje
+
+titles:
+  edit: Zobacz szczegóły %s
+  change: Zmień
+
+values:
+  visible:
+    0: <span>Nie</span>
+    1: <span>Tak</span>
+  verified:
+    0: <span>Nie</span>
+    1: <span>Tak</span>
+  deleted:
+    0: <span>Nie</span>
+    1: <span>Tak</span>

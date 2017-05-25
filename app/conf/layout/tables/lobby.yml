@@ -1,0 +1,25 @@
+cols:
+  id:
+    type: checkbox
+    value: id_lobby
+    class: mass-checkbox
+    width: 25
+    sortable: false
+  title:
+    type: link
+    link: [/lobby/, id_lobby]
+    width: '*'
+  author:
+    # type: link
+    # link: [/user/, id_user]
+    width: 20%
+  article:
+    width: 20%
+    escape: true
+  type:
+    type: tag
+    width: 5%
+    sortable: false
+  creation-date:
+    type: date
+    width: 15%

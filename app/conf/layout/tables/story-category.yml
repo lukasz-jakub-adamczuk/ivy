@@ -1,0 +1,50 @@
+cols:
+  id:
+    type: checkbox
+    value: id_story_category
+    class: mass-checkbox
+    width: 25
+    sortable: false
+  name:
+    type: link
+    link: [/story-category/, id_story_category]
+    width: '*'
+  abbr:
+    width: 10%
+  order:
+    type: link
+    link: [/story-category/, id_story_category, '/order']
+    class: black
+    sortable: false
+  articles:
+    type: number
+    icon: article
+    width: 7.5%
+    sortable: false
+  good:
+    type: number
+    icon: 'true'
+    unit: '%'
+    width: 7.5%
+    sortable: false
+  visible:
+    type: tag
+    tags:
+      0: false
+      1: black
+    class:
+      1: icon-visible
+    icon: visible
+    width: 5%
+  deleted:
+    type: tag
+    tags:
+      0: false
+      1: red
+    class:
+      1: icon-trash
+    icon: trash
+    width: 5%
+  creation-date:
+    type: date
+    width: 15%

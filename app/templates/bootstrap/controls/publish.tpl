@@ -1,0 +1,1 @@
+<button name="action" type="sumbit" class="button" value="publish" data-js="publish">Publikuj</button>

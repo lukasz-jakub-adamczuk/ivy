@@ -1,0 +1,56 @@
+policy:
+  insert:
+    actions:
+      unrender:
+        elements: []
+  update:
+    types:
+      span: [name]
+    actions:
+      render:
+        elements: [id]
+groups:
+  basic:
+tabs:
+  basic-data:
+fieldsets:
+  basic-data:
+    collapsed: false
+elements:
+  id:
+    prefix: ""
+    #value: id_offer
+    render: true
+    visible: false
+  title:
+    type: text
+    class: w40p
+  subtitle:
+    type: text
+    class: w80p
+  description:
+    type: textarea
+    class: w80p
+    rules:
+      - lowercase
+      - required
+  price:
+    type: text
+    class: w20p
+  date:
+    type: text
+    class: w20p
+    #filter: date
+  visible:
+    type: radio
+    values:
+      0: no
+      1: yes
+  special:
+    type: radio
+    values:
+      0: no
+      1: yes
+  idx:
+    class: w10p
+submits:

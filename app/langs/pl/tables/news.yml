@@ -1,0 +1,14 @@
+cols:
+  id-news:
+    name: ID
+  subtitle:
+    name: Podtytuł
+  images:
+    title: Obrazki
+  comments:
+    title: Komentarze
+
+# values:
+#   visible:
+#     0: nie
+#     1: tak

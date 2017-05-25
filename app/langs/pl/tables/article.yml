@@ -1,0 +1,14 @@
+cols:
+  verified:
+    title: Sprawdzony
+
+# values:
+#   verified:
+#     0: '<span>Nie</span>'
+#     1: '<span>Tak</span>'
+#   visible:
+#     0: '<span>Nie</span>'
+#     1: '<span>Tak</span>'
+#   deleted:
+#     0: '<span>Nie</span>'
+#     1: '<span>Tak</span>'

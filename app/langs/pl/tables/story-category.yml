@@ -1,0 +1,13 @@
+cols:
+  abbr:
+    name: Skrót
+  order:
+    name: Kolejność
+  articles:
+    title: Artykuły
+  good:
+    title: Poprawność
+
+values:
+  order:
+    order: 'Zmień'

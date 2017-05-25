@@ -1,0 +1,45 @@
+cols:
+  id:
+    type: checkbox
+    value: id_news
+    class: mass-checkbox
+    width: 25
+    sortable: false
+  title:
+    type: link
+    link: [/news/, id_news]
+    escape: true
+    width: '*'
+  author:
+    type: link
+    link: [/user/, id_user]
+    class: black
+    width: 20%
+  category:
+    type: link
+    link: [/category/, id_category]
+    width: 20%
+    escape: true
+    visible: false
+  images:
+    type: number
+    icon: image
+    width: 5%
+  comments:
+    # type: link
+    # link: [/comments/, id_article]
+    type: number
+    icon: comments
+    width: 5%
+  visible:
+    type: tag
+    tags:
+      0: false
+      1: black
+    class:
+      1: icon-visible
+    width: 5%
+    icon: visible
+  creation-date:
+    type: date
+    width: 20%

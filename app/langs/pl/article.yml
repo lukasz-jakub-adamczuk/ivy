@@ -1,0 +1,12 @@
+cols:
+  id-offer:
+    name: ID
+  subtitle:
+    name: Podtytuł
+  special:
+    name: Wyr.
+    title: Wyróżniony
+values:
+  deleted:
+    0: ''
+    1: '<span class="red icon-remove"></span>'

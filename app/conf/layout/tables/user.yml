@@ -1,0 +1,23 @@
+cols:
+  id:
+    type: checkbox
+    value: id_user
+    class: mass-checkbox
+    width: 25
+    sortable: false
+  name:
+    type: link
+    link: [/user/, id_user]
+    width: '*'
+  slug:
+    width: 15%
+  real-name:
+    width: 15%
+    escape: true
+  permissions:
+    type: link
+    link: [/user-permission/, id_user]
+    width: 5%
+  register-date:
+    type: date
+    width: 15%

@@ -1,0 +1,1 @@
+{if isset($aFields.deleted)}{if $aFields.deleted eq 0}<button name="button" type="sumbit" class="btn btn-danger" value="delete" data-js="delete">Usuń</button>{else}<button name="button" type="sumbit" class="btn btn-default" value="undelete" data-js="undelete">Przywróć</button>{/if}{/if}

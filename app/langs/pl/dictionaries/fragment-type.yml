@@ -1,0 +1,6 @@
+fragment-type:
+  game-info: Informacje (gra)
+  music-info: Informacje (album)
+  logo-image: Obraz (logotyp)
+  cover-image: Obraz (tło)
+  notice: Komunikat

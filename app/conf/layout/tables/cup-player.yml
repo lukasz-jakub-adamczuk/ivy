@@ -1,0 +1,27 @@
+cols:
+  id:
+    type: checkbox
+    value: id_cup_player
+    class: mass-checkbox
+    width: 25
+    sortable: false
+  name:
+    type: link
+    link: [/cup-player/, id_cup_player]
+    width: '*'
+  id-cup:
+    type: number
+    width: 10%
+  group:
+    type: number
+    width: 10%
+  battles:
+    type: number
+    width: 10%
+  points:
+    type: number
+    width: 10%
+  stats:
+    value: [won, '-', lost]
+    align: center
+    width: 10%

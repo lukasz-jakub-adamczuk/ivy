@@ -1,0 +1,37 @@
+cols:
+  id:
+    type: checkbox
+    value: id_cup
+    class: mass-checkbox
+    width: 25
+    sortable: false
+  name:
+    type: link
+    link: [/cup/, id_cup]
+    width: '*'
+  players:
+    type: link
+    link: [/cup-player]
+    width: 15%
+  battles:
+    type: link
+    link: [/cup-battle]
+    width: 15%
+  visible:
+    type: tag
+    tags:
+      0: false
+      1: black
+    class:
+      1: icon-visible
+    icon: visible
+    width: 5%
+  deleted:
+    type: tag
+    tags:
+      0: false
+      1: red
+    class:
+      1: icon-trash
+    icon: trash
+    width: 5%

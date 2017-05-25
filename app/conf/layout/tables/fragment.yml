@@ -1,0 +1,23 @@
+cols:
+  id:
+    type: checkbox
+    value: id_fragment
+    class: mass-checkbox
+    width: 25
+    sortable: false
+  name:
+    type: link
+    link: [/fragment/, id_fragment]
+    width: '*'
+    value: [name, '...']
+  author:
+    type: link
+    link: [/user/, id_user]
+    class: black
+    width: 20%
+  type:
+    width: 15%
+    escape: true
+  creation-date:
+    type: date
+    width: 15%

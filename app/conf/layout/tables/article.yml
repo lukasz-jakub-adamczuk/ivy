@@ -1,0 +1,59 @@
+cols:
+  id:
+    type: checkbox
+    value: id_article
+    class: mass-checkbox
+    width: 25
+    sortable: false
+  title:
+    type: link
+    link: [/article/, id_article]
+    width: '*'
+  author:
+    type: link
+    link: [/user/, id_author]
+    class: black
+    width: 20%
+  category:
+    type: link
+    link: [/article-category/, id_article_category]
+    class: black
+    width: 20%
+    escape: true
+  comments:
+    type: number
+    icon: comments
+    width: 5%
+  verified:
+    type: tag
+    tags:
+      0: false
+      1: green
+    class:
+      1: icon-true
+    icon: 'true'
+    width: 5%
+  views:
+    type: number
+    width: 5%
+  visible:
+    type: tag
+    tags:
+      0: false
+      1: black
+    class:
+      1: icon-visible
+    icon: visible
+    width: 5%
+  deleted:
+    type: tag
+    tags:
+      0: false
+      1: red
+    class:
+      1: icon-trash
+    icon: trash
+    width: 5%
+  creation-date:
+    type: date
+    width: 15%
