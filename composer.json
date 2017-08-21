@@ -1,0 +1,25 @@
+{
+    "require": {
+        "symfony/yaml": "^3.3",
+        "mihaeu/html-formatter": "*",
+        "gajus/dindent": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aya\\": "../aya/src/Aya/",
+            "Dao\\": "../dao/src/Dao/",
+            "Ivy\\": "src/Ivy/",
+            "": ["vendor/src/"]
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^2.3",
+        "squizlabs/php_codesniffer": "^2.5",
+        "phpmd/phpmd": "^2.3",
+        "sebastian/phpcpd": "^2.0",
+        "phing/phing": "^2.13"
+    }
+}

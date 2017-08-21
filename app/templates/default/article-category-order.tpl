@@ -4,18 +4,7 @@
 				<form method="post" action="{$base}/{$ctrl}/update-order">
 					<input name="ctrl" type="hidden" value="{$sCtrl|default:$ctrl}">
 					<ul id="sortable-categories" class="sortable-list">
-						{foreach from=$aElements item=elem key=k}
-						<li>
-							<div class="item">
-								<select id="item-{$k}" name="ids[{$k}]">
-								{foreach from=$aOptions item=opt key=ok}
-									<option value="{$opt}"{if $opt eq $elem.idx} selected="selected"{/if}>{$opt}</option>
-								{/foreach}
-								</select>
-								{$elem.name}
-							</div>
-						</li>
-						{/foreach}
+						{include 'partials/list-items.tpl' list=$aElements}
 					</ul>
 					<div class="buttons">
 						{include file='controls/buttons.tpl'}

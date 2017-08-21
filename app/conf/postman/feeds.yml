@@ -1,0 +1,57 @@
+senablog:
+  name: SE Blog (NA),
+  icon-url: 'http://na.square-enix.com/favicon.ico'
+seeublog:
+  name: SE Blog (EU),
+  icon-url: 'http://eu.square-enix.com/favicon.ico'
+n4g:
+  name: N4G,
+  icon-url: 'http://n4g.com/favicon.ico'
+kotaku:
+  name: Kotaku,
+  icon-url: 'http://i.kinja-img.com/gawker-media/image/upload/s--8ngyEHLF--/c_fill,fl_progressive,g_center,h_80,q_80,w_80/192oz8eyfa6h5png.png'
+squareportal:
+  name: Square Portal,
+  icon-url: 'http://1.gravatar.com/blavatar/589d12e1e75399f44e8b0acc134925f6?s=16'
+hardcoregamer:
+  name: Hardcore Gamer,
+  icon-url: 'http://www.hardcoregamer.com/wp-content/themes/blain/favicon.png'
+vgleaks:
+  name: VG Leaks,
+  icon-url: 'http://vgleaks.com/favicon.jpg'
+siliconera:
+  name: Siliconera,
+  icon-url: 'http://siliconera.com/favicon.ico'
+seorigin:
+  name: SE Origin,
+  icon-url: 'http://enixorigin.com/favicon.ico'
+gematsu:
+  name: Gematsu,
+  icon-url: 'http://gematsu.com/wp-content/themes/2014/images/favicon.png'
+novacrystallis:
+  name: Nova Crystallis,
+  icon-url: 'http://www.novacrystallis.com/wp-content/themes/nova3/favicon2.png'
+reddit:
+  name: Reddit SE,
+  icon-url: 'http://www.redditstatic.com/icon.png'
+redditff:
+  name: Reddit FF,
+  icon-url: 'http://www.redditstatic.com/icon.png'
+redditdq:
+  name: Reddit DQ,
+  icon-url: 'http://www.redditstatic.com/icon.png'
+reddittr:
+  name: Reddit TR,
+  icon-url: 'http://www.redditstatic.com/icon.png'
+redditde:
+  name: Reddit DE,
+  icon-url: 'http://www.redditstatic.com/icon.png'
+redditkh:
+  name: Reddit KH,
+  icon-url: 'http://www.redditstatic.com/icon.png'
+reddith:
+  name: Reddit H,
+  icon-url: 'http://www.redditstatic.com/icon.png'
+dualshockers:
+  name: Dual Shockers,
+  icon-url: 'http://www.dualshockers.com/favicon.ico'
