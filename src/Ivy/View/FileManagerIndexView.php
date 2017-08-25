@@ -9,7 +9,7 @@ class FileManagerIndexView extends View {
 
     public function fill() {
         // basePath could be different due rights
-        $basePath = SITE_DIR . '';
+        $basePath = WEB_DIR . '';
         
         $tmpPath = isset($_GET['path']) ? $_GET['path'] : 'assets';
 

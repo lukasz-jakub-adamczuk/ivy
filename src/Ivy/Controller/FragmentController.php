@@ -2,7 +2,7 @@
 
 namespace Ivy\Controller;
 
-use Aya\Management\CrudController;
+use Aya\Core\Dao;
 
 class FragmentController extends FrontController {
 

@@ -2,8 +2,6 @@
 
 namespace Ivy\Controller;
 
-// use Aya\Management\CrudController;
-
 use Ivy\Helper\PostmanManager;
 
 class PostmanController extends FrontController {

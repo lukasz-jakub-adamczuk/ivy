@@ -431,7 +431,7 @@ isis.events = {
                             .done(function(data) {
                                 files++;
                                 name = $('.messages .info strong', data).text();
-                                $('.dir-content').append($('<input id="file-'+files+'" name="files[]" type="checkbox" value="'+site+'/'+path.split(',').join('/')+'/'+name+'">                     <div>                           <span class="res icon-image image-thumbnail"><img src="'+site+'/image.php?img='+path.split(',').join('/')+'/'+name+'&size=72x72"></span>                            <label for="file-'+files+'">'+name+'</label>                        </div>'));
+                                $('.dir-content').append($('<input id="file-'+files+'" name="files[]" type="checkbox" value="'+site+'/'+path.split(',').join('/')+'/'+name+'">                     <div>                           <span class="res icon-image image-thumbnail"><img src="'+base+'/'+path.split(',').join('/')+'/'+name+'"></span>                            <label for="file-'+files+'">'+name+'</label>                        </div>'));
                                 $('#files-count').text(files);
                             }
                         );
@@ -499,7 +499,7 @@ isis.events = {
                             images = '';
 
                         $.each(files, function(idx, itm) {
-                            images += '<li><figure class="thumbnail"><span class="icon-close" data-js="remove-image"></span><img src="' + site + asset + itm + '" width="120" height="120" data-asset="' + asset + itm + '" data-type="new"></figure></li>';
+                            images += '<li><figure class="thumbnail"><span class="icon-close" data-js="remove-image"></span><img src="' + base + asset + itm + '" width="120" height="120" data-asset="' + asset + itm + '" data-type="new"></figure></li>';
                         });
                         $('#sortable-images').append(images);
                     }
@@ -578,7 +578,7 @@ isis.events = {
                     console.log(files);
 
                     $.each(files, function(idx, itm) {
-                        images += '<li><figure class="thumbnail"><span class="icon-close" data-js="remove-item"></span><img src="' + site + asset + itm + '" width="120" height="120" data-asset="' + asset + itm + '" data-type="new"></figure></li>';
+                        images += '<li><figure class="thumbnail"><span class="icon-close" data-js="remove-item"></span><img src="' + base + asset + itm + '" width="120" height="120" data-asset="' + asset + itm + '" data-type="new"></figure></li>';
                     });
                     $('#sortable-images').append(images);
                     

@@ -51,4 +51,19 @@ class StreamManager {
 
         return $aItem;
     }
+
+    public static function clearStreamCache($sStreamType = null) {
+		$sStreamFile = CACHE_DIR . '/stream';
+
+		// verify by file_exists()
+		if (file_exists($sStreamFile)) {
+			unlink($sStreamFile);
+		}
+
+		if ($sStreamType) {
+			if (file_exists($sStreamFile.'-'.$sStreamType)) {
+				unlink($sStreamFile.'-'.$sStreamType);
+			}
+		}
+	}
 }

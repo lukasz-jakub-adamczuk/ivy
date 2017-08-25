@@ -3,7 +3,6 @@
 namespace Ivy\Controller;
 
 use Aya\Core\Dao;
-use Aya\Management\CrudController;
 
 class UserPermissionController extends FrontController {
 

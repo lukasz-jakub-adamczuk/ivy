@@ -2,8 +2,6 @@
 
 namespace Ivy\Controller;
 
-use Aya\Management\CrudController;
-
 use Ivy\Helper\ImageFragment;
 use Ivy\Helper\StreamManager;
 
@@ -21,7 +19,7 @@ class StoryController extends FrontController {
 
         StreamManager::handleItem('article', $mId);
 
-        $this->_clearStreamCache('story');
+        StreamManager::clearStreamCache('story');
     }
 
     public function afterUpdate($mId) {
@@ -30,7 +28,7 @@ class StoryController extends FrontController {
 
         StreamManager::handleItem('article', $mId);
 
-        $this->_clearStreamCache('story');
+        StreamManager::clearStreamCache('story');
     }
 
     /*private function _prepareStreamItem($mId, $aPost) {

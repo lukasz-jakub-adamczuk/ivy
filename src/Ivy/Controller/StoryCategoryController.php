@@ -2,8 +2,6 @@
 
 namespace Ivy\Controller;
 
-use Aya\Management\CrudController;
-
 class StoryCategoryController extends FrontController {
 
     public function afterInsert($iId) {

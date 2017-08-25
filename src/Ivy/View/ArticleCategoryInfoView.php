@@ -10,7 +10,8 @@ class ArticleCategoryInfoView extends InfoView {
 
     public function postProcessDataset($aFields) {
         // gallery
-        $sCompletePath = SITE_DIR . '/pub/assets/games/'.$aFields['abbr'].'/imgs';
+        $sCompletePath = WEB_DIR . '/assets/games/'.$aFields['abbr'].'/imgs';
+        // TODO sync site structure
         $aAllContent = Folder::getContent($sCompletePath, true);
 
         $this->_renderer->assign('iGalleryImagesTotal', count($aAllContent['files']));

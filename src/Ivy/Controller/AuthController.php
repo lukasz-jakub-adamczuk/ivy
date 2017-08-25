@@ -6,8 +6,6 @@ use Aya\Core\Dao;
 use Aya\Core\Debug;
 use Aya\Core\User;
 
-use Ivy\Controller\FrontController;
-
 class AuthController extends FrontController {
 
     public function indexAction() {

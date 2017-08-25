@@ -6,6 +6,7 @@ use Aya\Core\Dao;
 use Aya\Helper\ValueMapper;
 
 use Ivy\Helper\RssFeedGenerator;
+use Ivy\Helper\StreamManager;
 
 class NewsController extends FrontController {
 
@@ -15,7 +16,7 @@ class NewsController extends FrontController {
 
         $this->_createRssFeed();
 
-        $this->_clearStreamCache('news');
+        StreamManager::clearStreamCache('news');
     }
 
     public function afterUpdate($mId) {
@@ -24,7 +25,7 @@ class NewsController extends FrontController {
 
         $this->_createRssFeed();
 
-        $this->_clearStreamCache('news');
+        StreamManager::clearStreamCache('news');
     }
 
     private function _handleImages($mId) {
@@ -37,11 +38,12 @@ class NewsController extends FrontController {
             // maybe need to rename news dir
             $sNewsDir = basename($sNewsPath);
             if ($sNewsDir == 'tmp-'.$_SESSION['user']['id']) {
-                $sSrc = SITE_DIR . '' . $sNewsPath;
+                $sSrc = WEB_DIR . '' . $sNewsPath;
                 $sDest = str_replace($sNewsDir, $mId, $sSrc);
                 
                 // rename news dir
                 rename($sSrc, $sDest);
+                // TODO need to sync site
             }
 
             // add new images
@@ -103,7 +105,7 @@ class NewsController extends FrontController {
 
         RssFeedGenerator::create($aNews);
 
-        RssFeedGenerator::save(SITE_DIR . '/rss.xml');
+        RssFeedGenerator::save(CACHE_DIR . '/rss.xml');
 
     }
 }

@@ -28,7 +28,7 @@ class FileBroker {
             // paths
             $sPath = $_REQUEST['path'];
             $sFragmentPath = ($sPath == '' ? '' : '/') . str_replace(',', '/', $sPath);
-            $sCompletePath = SITE_DIR . $sFragmentPath;
+            $sCompletePath = WEB_DIR . $sFragmentPath;
 
             // echo $sPath.', '.$sFragmentPath.', '.$sFragmentPath;
 
@@ -78,6 +78,18 @@ class FileBroker {
             // handle file transfer
             $sMethod = '_handleFile'.ucfirst($sTransfer);
             $aFiles = self::$sMethod($sAutoName, $sCompletePath, $sFragmentPath, $iExistingFiles);
+
+            // sync ivy /assets with renaissance /assets
+            if (isset($aFiles['ok']) && count($aFiles['ok'])) {
+                foreach ($aFiles['ok'] as $file) {
+                    $dir = SITE_DIR . $sFragmentPath;
+                    $src = $sCompletePath . '/' . $file;
+                    $dst = $dir . '/' . $file;
+                    $cmd = "mkdir -p $dir && cp $src $dst";
+                    // echo $cmd;
+                    exec($cmd);
+                }
+            }
 
             if (isset($aFiles['ok'])) {
                 MessageList::raiseInfo('Plik/i <strong>'.implode(', ', $aFiles['ok']).'</strong> zostały wgrane.');
@@ -182,19 +194,20 @@ class FileBroker {
                         $sName = $sAutoName . $sIteration . '.' . $sExt;
                     }
 
-                    // echo $content;
-                    
-
                     // file to write
-                    $path = TMP_DIR . '/'.md5($url);
-                    $fw = fopen($path, 'w');
+                    // $path = TMP_DIR . '/'.md5($url);
+                    // $fw = fopen($path, 'w');
+                    // fwrite($fw, $content);
+                    // fclose($fw);
+
+                    // $dest = $sCompletePath . '/'.$sName. '';
+                    // if (copy($path, $dest)) {
+                    //     unlink($path);    
+                    // }
+                    $dest = $sCompletePath . '/'.$sName. '';
+                    $fw = fopen($dest, 'w');
                     fwrite($fw, $content);
                     fclose($fw);
-
-                    $dest = $sCompletePath . '/'.$sName. '';
-                    if (copy($path, $dest)) {
-                        unlink($path);    
-                    }
 
                     $i++;
                     $aFiles['ok'][] = $sName;

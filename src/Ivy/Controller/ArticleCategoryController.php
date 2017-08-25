@@ -2,17 +2,15 @@
 
 namespace Ivy\Controller;
 
-use Aya\Management\CrudController;
-
 class ArticleCategoryController extends FrontController {
 
     public function afterInsert($iId) {
         if (isset($_POST['dataset']['abbr'])) {
             $sName = $_POST['dataset']['abbr'];
-            $sCategoryDir = SITE_DIR . '/assets/games/' . $sName;
-
+            $sCategoryDir = WEB_DIR . '/assets/games/' . $sName;
+// TODO sync on site
             if (!file_exists($sCategoryDir)) {
-                if (mkdir($sCategoryDir, 0777)) {
+                if (mkdir($sCategoryDir, 0755)) {
                     $this->raiseInfo('Katalog mediów został utworzony.');
                     $this->actionForward('index', $this->_ctrlName, true);
                 } else {

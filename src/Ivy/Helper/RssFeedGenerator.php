@@ -18,12 +18,12 @@ class RssFeedGenerator {
         $aRss['description'] = 'Squarezone - polska strona o Square Enix oraz jRPG.';
         $aRss['link'] = 'http://squarezone.pl';
         $aRss['lastbuilddate'] = $aRecentNews['pubdate'];
-        $aRss['generator'] = 'genrator';
+        $aRss['generator'] = 'generator';
 
         $aRss['image'] = array();
-        $aRss['image']['url'] = BASE_URL . '/favicon.png';
+        $aRss['image']['url'] = SITE_URL . '/favicon.png';
         $aRss['image']['title'] = 'title';
-        $aRss['image']['link'] = BASE_URL;
+        $aRss['image']['link'] = SITE_URL;
         $aRss['image']['description'] = 'get from meta...';
 
         $sItems = '';

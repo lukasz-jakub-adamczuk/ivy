@@ -2,7 +2,6 @@
 
 namespace Ivy\Controller;
 
-use Aya\Management\CrudController;
 use Aya\Helper\ChangeLog;
 
 class NewsImageController extends FrontController {
@@ -16,7 +15,8 @@ class NewsImageController extends FrontController {
     }
 
     public function postRemove($sName) {
-        $sFile = SITE_DIR . $sName;
+        $sFile = WEB_DIR . $sName;
+        // TODO same situation like on ArticleImageController
         if (file_exists($sFile)) {
             unlink($sFile);
 

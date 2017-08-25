@@ -1,5 +1,8 @@
 <?php
-require_once APP_DIR.'/helpers/ChangeLog.php';
+
+namespace Ivy\Controller;
+
+use Aya\Helper\ChangeLog;
 
 class ArticleImageController extends FrontController {
 
@@ -13,10 +16,11 @@ class ArticleImageController extends FrontController {
 
     public function removeAction() {
         
-        $sFile = SITE_DIR . $sName;
+        $sFile = WEB_DIR . $sName;
+        // TODO remove file on site too
         if (file_exists($sFile)) {
             unlink($sFile);
-
+// TODO changelog won't accept unlink,
             ChangeLog::add('unlink', $this->_ctrlName, $sName);
         }
     }

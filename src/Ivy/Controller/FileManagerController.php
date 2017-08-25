@@ -2,8 +2,6 @@
 
 namespace Ivy\Controller;
 
-use Aya\Management\CrudController;
-
 use Ivy\Helper\FileBroker;
 
 class FileManagerController extends FrontController {
@@ -74,9 +72,10 @@ class FileManagerController extends FrontController {
             $sPath = $_POST['path'];
             $sName = $_POST['dataset']['dir'];
 
-            $sCompletePath = SITE_DIR . ($sPath == '' ? '' : '/') . str_replace(',', '/', $sPath) . '/' . $sName;
+            $sCompletePath = WEB_DIR . ($sPath == '' ? '' : '/') . str_replace(',', '/', $sPath) . '/' . $sName;
+            // TODO sync site
 
-            echo $sCompletePath;
+            // echo $sCompletePath;
 
             // create directory if does not exists
             if (!file_exists($sCompletePath)) {
@@ -112,7 +111,8 @@ class FileManagerController extends FrontController {
                 $sPath = $_POST['path'];
                 $sName = $_POST['dataset']['name'];
 
-                $sCompletePath = SITE_DIR . '/pub' . ($sPath == '' ? '' : '/') . str_replace(',', '/', $sPath);
+                $sCompletePath = WEB_DIR . '' . ($sPath == '' ? '' : '/') . str_replace(',', '/', $sPath);
+                // TODO sync site
 
                 if (isset($_POST['action']['save'])) {
                     // rename

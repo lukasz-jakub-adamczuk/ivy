@@ -12,7 +12,7 @@ cols:
     width: '*'
   author:
     type: link
-    link: [/user/, id_user]
+    link: [/user/, id_author]
     class: black
     width: 20%
   category:
