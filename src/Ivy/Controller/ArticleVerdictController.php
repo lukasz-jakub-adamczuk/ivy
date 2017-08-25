@@ -4,7 +4,7 @@ namespace Ivy\Controller;
 
 use Aya\Management\CrudController;
 
-class ArticleVerdictController extends CrudController {
+class ArticleVerdictController extends FrontController {
 
     public function afterUpdate($iId) {
         $oEntity = Dao::entity('article-verdict', $iId, 'id_article_fragment');

@@ -4,7 +4,7 @@ namespace Ivy\Controller;
 
 use Aya\Management\CrudController;
 
-class StoryCategoryController extends CrudController {
+class StoryCategoryController extends FrontController {
 
     public function afterInsert($iId) {
         if (isset($_POST['dataset']['abbr'])) {

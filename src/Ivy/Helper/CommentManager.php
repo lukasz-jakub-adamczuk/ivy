@@ -7,52 +7,52 @@ use Aya\Helper\FileStorage;
 
 class CommentManager {
 
-    static private $_iTotal = 0;
+    static private $_total = 0;
 
-    static private $_aCounters = array();
+    static private $_counters = array();
 
     public static function getCommentsCounters() {
-        return self::$_aCounters;
+        return self::$_counters;
     }
 
     public static function getCommentsTotal() {
-        return self::$_iTotal;
+        return self::$_total;
     }
 
     public static function analyzeComments() {
-        self::$_iTotal = 0;
+        self::$_total = 0;
 
-        $aElements = array(
+        $elements = array(
             'news',
             'article',
             'story',
             'user'
         );
 
-        $oCommentsCollection = Dao::collection('comments');
+        $commentsCollection = Dao::collection('comments');
 
         // check does storage dir exists
         FileStorage::checkStorage(CACHE_DIR . '/sql');
 
-        $sStorageKey = CACHE_DIR . '/sql/all-unauthorized-comments';
-        if (FileStorage::is($sStorageKey)) {
-            $aCounters['unauthorized'] = FileStorage::restore($sStorageKey);
+        $storageKey = CACHE_DIR . '/sql/all-unauthorized-comments';
+        if (FileStorage::is($storageKey)) {
+            $counters['unauthorized'] = FileStorage::restore($storageKey);
         } else {
-            foreach ($aElements as $element) {
-                $sStorageKey = CACHE_DIR . '/sql/unauthorized-'.$element.'-comments';
-                if (FileStorage::is($sStorageKey)) {
-                    $aCounters['unauthorized'][$element.'-comment'] = FileStorage::get($sStorageKey);
+            foreach ($elements as $element) {
+                $storageKey = CACHE_DIR . '/sql/unauthorized-'.$element.'-comments';
+                if (FileStorage::is($storageKey)) {
+                    $counters['unauthorized'][$element.'-comment'] = FileStorage::get($storageKey);
                 } else {
-                    $aCounters['unauthorized'][$element.'-comment'] = $oCommentsCollection->getUnauthorizedComments($element);
-                    FileStorage::set($sStorageKey, $aCounters['unauthorized'][$element.'-comment']);
+                    $counters['unauthorized'][$element.'-comment'] = $commentsCollection->getUnauthorizedComments($element);
+                    FileStorage::set($storageKey, $counters['unauthorized'][$element.'-comment']);
                 }
             }
 
-            FileStorage::store($sStorageKey, $aCounters['unauthorized']);
+            FileStorage::store($storageKey, $counters['unauthorized']);
         }
 
-        self::$_iTotal = array_sum($aCounters['unauthorized']);
+        self::$_total = array_sum($counters['unauthorized']);
         
-        self::$_aCounters = $aCounters;
+        self::$_counters = $counters;
     }
 }

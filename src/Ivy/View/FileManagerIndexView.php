@@ -9,27 +9,27 @@ class FileManagerIndexView extends View {
 
     public function fill() {
         // basePath could be different due rights
-        $sBasePath = SITE_DIR . '/assets';
+        $basePath = SITE_DIR . '';
         
-        $sPath = isset($_GET['path']) ? $_GET['path'] : '';
+        $tmpPath = isset($_GET['path']) ? $_GET['path'] : 'assets';
 
-        $aPath = explode(',', $sPath);
-        foreach ($aPath as $pk => $path) {
+        $parts = explode(',', $tmpPath);
+        foreach ($parts as $pk => $path) {
             $tmp[] = $path;
-            $aPathItems[] = array('url' => implode(',', $tmp), 'name' => $path);
+            $pathItems[] = array('url' => implode(',', $tmp), 'name' => $path);
         }
 
-        $sContentPath = $sBasePath . '/' . str_replace(',', '/', $sPath);
-        if (file_exists($sContentPath)) {
-            $aAllContent = Folder::getContent($sContentPath, true);
-
-            // print_r($aAllContent);
+        $contentPath = $basePath . '/' . str_replace(',', '/', $tmpPath);
+        if (file_exists($contentPath)) {
+            $allContent = Folder::getContent($contentPath, true, ['.DS_Store']);
 
             // filter and sort
-            foreach ($aAllContent as $tk => $type) {
-                foreach ($type as $item) {
+            foreach ($allContent as $tk => $type) {
+                $realTmpPath = '/' . str_replace(',', '/', $tmpPath);
+                foreach ($type as &$item) {
+                    $item['path'] = $realTmpPath . '/' . $item['name'];
                     if (substr($item['name'], 0, 6) !== '__rm__') {
-                        $aContent[$tk][] = $item;
+                        $content[$tk][] = $item;
                     }
                 }
             }
@@ -37,27 +37,26 @@ class FileManagerIndexView extends View {
             // up dir path
             if (count($tmp) > 1) {
                 array_pop($tmp);
-                $sUpDirPath = '/' . implode(',', $tmp);
+                $upDirPath = '/' . implode(',', $tmp);
             } else {
-                $sUpDirPath = '';
+                $upDirPath = '';
             }
-            // echo $sUpDirPath;
 
             // counts
-            $aCounts = array();
-            $aCounts['dirs'] = count($aContent['dirs']) > 1 ? count($aContent['dirs']) - 1 : 0;
-            $aCounts['files'] = isset($aContent['files']) ? count($aContent['files']) : 0;
+            $counters = array();
+            $counters['dirs'] = count($content['dirs']) > 1 ? count($content['dirs']) - 1 : 0;
+            $counters['files'] = isset($content['files']) ? count($content['files']) : 0;
 
-            $this->_renderer->assign('sPath', $sPath);
-            $this->_renderer->assign('sUpDirPath', $sUpDirPath);
-            $this->_renderer->assign('aPathItems', $aPathItems);
+            $this->_renderer->assign('tmpPath', $tmpPath);
+            $this->_renderer->assign('upDirPath', $upDirPath);
+            $this->_renderer->assign('pathItems', $pathItems);
 
-            $this->_renderer->assign('aCounts', $aCounts);
+            $this->_renderer->assign('counters', $counters);
 
-            $this->_renderer->assign('aDirs', $aContent['dirs']);
-            // print_r($aContent['files']);
-            if (isset($aContent['files'])) {
-                $this->_renderer->assign('aFiles', $aContent['files']);
+            $this->_renderer->assign('dirs', $content['dirs']);
+            // print_r($content['files']);
+            if (isset($content['files'])) {
+                $this->_renderer->assign('files', $content['files']);
             }
         } else {
             $this->raiseError('...Szukany katalog nie istnieje.');

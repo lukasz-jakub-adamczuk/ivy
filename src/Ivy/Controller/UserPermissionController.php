@@ -5,7 +5,7 @@ namespace Ivy\Controller;
 use Aya\Core\Dao;
 use Aya\Management\CrudController;
 
-class UserPermissionController extends CrudController {
+class UserPermissionController extends FrontController {
 
 	public function infoAction() {
 		// $this->setTemplateName('user-permission-')

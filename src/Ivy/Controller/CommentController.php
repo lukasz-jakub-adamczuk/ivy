@@ -2,9 +2,7 @@
 
 namespace Ivy\Controller;
 
-use Aya\Management\CrudController;
-
-class CommentController extends CrudController {
+class CommentController extends FrontController {
 
     public function indexAction() {
         $this->setTemplateName('comments-list');

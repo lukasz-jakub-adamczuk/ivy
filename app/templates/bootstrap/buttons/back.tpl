@@ -1,1 +1,0 @@
-<a href="{$base}/{$ctrl}" class="btn">Wstecz</a>

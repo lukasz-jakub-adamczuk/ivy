@@ -6,77 +6,81 @@ use Symfony\Component\Yaml\Yaml;
 
 class PostmanManager {
 
-    static private $_iTotal = 0;
+    static private $_total = 0;
 
-    static private $_aCounters = array();
+    static private $_counters = [];
 
     public static function getFeedsCounters() {
-        return self::$_aCounters;
+        return self::$_counters;
     }
 
     public static function getFeedsTotal() {
-        return self::$_iTotal;
+        return self::$_total;
+    }
+
+    public static function info() {
+        return ['total' => self::$_total, 'counters' => self::$_counters];
     }
 
     public static function getFeedsSections() {
-        $sConfigInCacheFile = CACHE_DIR . '/postman.obj';
-        if (file_exists($sConfigInCacheFile)) {
-            $aSections = unserialize(file_get_contents($sConfigInCacheFile));
+        $configInCacheFile = CACHE_DIR . '/postman.obj';
+        if (file_exists($configInCacheFile)) {
+            $sections = unserialize(file_get_contents($configInCacheFile));
         } else {
             // require_once dirname(ROOT_DIR) . '/XhtmlTable/Aya/Yaml/AyaYamlLoader.php';
 
-            $sSitesConfFile = APP_DIR . '/conf/postman/feeds.yml';
+            $sitesConfFile = APP_DIR . '/conf/postman/feeds.yml';
 
-            $aSections = Yaml::parse(file_get_contents($sSitesConfFile));
+            $sections = Yaml::parse(file_get_contents($sitesConfFile));
 
-            foreach ($aSections as $sk => &$section) {
+            foreach ($sections as $sk => &$section) {
                 $section['url'] = 'postman/index/' . $sk;
             }
         }
 
-        return $aSections;
+        return $sections;
     }
 
     public static function analyzeFeeds() {
-        self::$_iTotal = 0;
-        $aKeys = array_keys(self::getFeedsSections());
+        self::$_total = 0;
+        $feedKeys = array_keys(self::getFeedsSections());
 
-        $sFeedStatsDir = CACHE_DIR . '/feeds';
-        if (!file_exists($sFeedStatsDir)) {
-            mkdir($sFeedStatsDir, 0777, true);
+        $feedStatsDir = CACHE_DIR . '/feeds';
+        if (!file_exists($feedStatsDir)) {
+            mkdir($feedStatsDir, 0777, true);
         }
 
-        foreach ($aKeys as $item) {
-            $sFeedFile = AYA_DIR . '/../postman/feeds/'.$item.'.json';
-            $sFeedStatsFile = $sFeedStatsDir.'/'.$item.'.json';
+        foreach ($feedKeys as $item) {
+            $feedFile = AYA_DIR . '/../postman/feeds/'.$item.'.json';
+            $feedStatsFile = $feedStatsDir.'/'.$item.'.json';
             
             // update feed stats if news elements came
-            $aElements = array();
-            if (file_exists($sFeedFile)) {
-                $aElements = json_decode(file_get_contents($sFeedFile), true);
+            $elements = array();
+            if (file_exists($feedFile)) {
+                $elements = json_decode(file_get_contents($feedFile), true);
             }
-            $aFeedStats = array();
-            if (file_exists($sFeedStatsFile)) {
-                $aFeedStats = unserialize(file_get_contents($sFeedStatsFile));
+            $feedStats = array();
+            if (file_exists($feedStatsFile)) {
+                $feedStats = unserialize(file_get_contents($feedStatsFile));
             }
 
-            $aStats = array();
-            if (count($aElements)) {
-                foreach ($aElements as $elem) {
+            $stats = array();
+            if (count($elements)) {
+                foreach ($elements as $elem) {
                     $sHash = md5(trim(strip_tags($elem['title'])));
-                    if (isset($aFeedStats[$sHash])) {
-                        $aStats[$sHash] = true;
+                    if (isset($feedStats[$sHash])) {
+                        $stats[$sHash] = true;
                     }
                 }
-                self::$_aCounters[$item]['value'] = count($aElements) - count($aStats);
+                self::$_counters[$item]['value'] = count($elements) - count($stats);
             } else {
-                self::$_aCounters[$item]['value'] = -1;
+                self::$_counters[$item]['value'] = -1;
             }
 
             // save stats to file
-            file_put_contents($sFeedStatsFile, serialize($aStats));
+            file_put_contents($feedStatsFile, serialize($stats));
 
-            self::$_iTotal += count($aElements) - count($aStats);
+            self::$_total += count($elements) - count($stats);
         }
     }
 }

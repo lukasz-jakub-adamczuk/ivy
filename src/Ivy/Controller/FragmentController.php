@@ -4,7 +4,7 @@ namespace Ivy\Controller;
 
 use Aya\Management\CrudController;
 
-class FragmentController extends CrudController {
+class FragmentController extends FrontController {
 
     public function afterInsert($mId) {
         // game-info

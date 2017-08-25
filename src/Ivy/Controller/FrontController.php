@@ -2,7 +2,6 @@
 
 namespace Ivy\Controller;
 
-// use Aya\Core\Controller;
 use Aya\Management\CrudController;
 use Aya\Core\User;
 use Aya\Helper\Breadcrumbs;
@@ -34,8 +33,8 @@ class FrontController extends CrudController {
 
         PostmanManager::analyzeFeeds();
 
-        $this->_renderer->assign('aCounters', PostmanManager::getFeedsCounters());
-        $this->_renderer->assign('iTotal', PostmanManager::getFeedsTotal());
+        $this->_renderer->assign('counters', PostmanManager::getFeedsCounters());
+        $this->_renderer->assign('postman', PostmanManager::info());
 
         // comments
         CommentManager::analyzeComments();

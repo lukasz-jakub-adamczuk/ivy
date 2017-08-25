@@ -7,7 +7,7 @@ use Aya\Management\CrudController;
 use Ivy\Helper\ImageFragment;
 use Ivy\Helper\StreamManager;
 
-class StoryController extends CrudController {
+class StoryController extends FrontController {
 
     // public function addAction() {
     //     $this->setTemplateName('article-info');

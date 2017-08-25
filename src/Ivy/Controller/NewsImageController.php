@@ -5,7 +5,7 @@ namespace Ivy\Controller;
 use Aya\Management\CrudController;
 use Aya\Helper\ChangeLog;
 
-class NewsImageController extends CrudController {
+class NewsImageController extends FrontController {
 
     // $this->setTemplateName('image-fragment');
 

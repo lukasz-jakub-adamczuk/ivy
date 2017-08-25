@@ -1,1 +1,0 @@
-<button class="button" data-js="choose">Wybierz</button>

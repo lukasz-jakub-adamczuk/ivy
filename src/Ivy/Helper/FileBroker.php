@@ -22,13 +22,13 @@ class FileBroker {
         self::_handleFileDelete(true);
     }
 
-    // priave methods
+    // priatve methods
     private static function _handleFileTransfer($sTransfer) {
         if (isset($_GET['path']) || isset($_POST['path'])) {
             // paths
             $sPath = $_REQUEST['path'];
             $sFragmentPath = ($sPath == '' ? '' : '/') . str_replace(',', '/', $sPath);
-            $sCompletePath = ASSETS_DIR . $sFragmentPath;
+            $sCompletePath = SITE_DIR . $sFragmentPath;
 
             // echo $sPath.', '.$sFragmentPath.', '.$sFragmentPath;
 
@@ -208,7 +208,7 @@ class FileBroker {
         if (isset($_POST['path'])) {
             $sPath = $_POST['path'];
 
-            $sCompletePath = ASSETS_DIR . ($sPath == '' ? '' : '/') . str_replace(',', '/', $sPath);
+            $sCompletePath = SITE_DIR . ($sPath == '' ? '' : '/') . str_replace(',', '/', $sPath);
 
             if (isset($_POST['files'])) {
                 $aFiles = $_POST['files'];

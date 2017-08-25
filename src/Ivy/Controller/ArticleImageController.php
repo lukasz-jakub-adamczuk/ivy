@@ -1,7 +1,7 @@
 <?php
 require_once APP_DIR.'/helpers/ChangeLog.php';
 
-class ArticleImageController extends CrudController {
+class ArticleImageController extends FrontController {
 
     // $this->setTemplateName('image-fragment');
 

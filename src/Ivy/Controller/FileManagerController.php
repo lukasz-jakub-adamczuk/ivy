@@ -6,7 +6,7 @@ use Aya\Management\CrudController;
 
 use Ivy\Helper\FileBroker;
 
-class FileManagerController extends CrudController {
+class FileManagerController extends FrontController {
 
     // public function indexAction() {
         // echo 'FMC...';

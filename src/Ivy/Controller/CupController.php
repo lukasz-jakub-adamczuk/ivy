@@ -4,7 +4,7 @@ namespace Ivy\Controller;
 
 use Aya\Management\CrudController;
 
-class CupController extends CrudController {
+class CupController extends FrontController {
 
     public function afterInsert($mId) {
         $aPost = $this->preInsert();

@@ -7,7 +7,7 @@ use Aya\Helper\ValueMapper;
 
 use Ivy\Helper\RssFeedGenerator;
 
-class NewsController extends CrudController {
+class NewsController extends FrontController {
 
     public function afterInsert($mId) {
         // ImageFragment::handleImageFragment($mId, 'logo', 1, $this->getCtrlName());

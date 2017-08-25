@@ -10,7 +10,7 @@
 				<a href="{$base}/dev/index">ToDo list</a> &bull; <a href="{$base}/dev/clear-navigator">clearNavigator()</a>
 			{/if}
 			<a id="comments-tgr" href="{$base}/news-comment" class="nav-icon icon-comment{if $iAllComments gt 0} count{/if}" data-count="{$iAllComments}"></a>
-			<a id="notification-tgr" href="{$base}/postman/index/n4g" class="nav-icon icon-notification{if $iTotal gt 0} count{/if}" data-count="{$iTotal}"></a>
+			<a id="notification-tgr" href="{$base}/postman/index/n4g" class="nav-icon icon-notification{if $postman.total gt 0} count{/if}" data-count="{$postman.total}"></a>
 			<span class="fr">
 				{if isset($user)}
 				<strong>{$user.name}</strong>

@@ -56,8 +56,11 @@ class PostmanController extends FrontController {
 
         PostmanManager::analyzeFeeds();
 
-        $this->_renderer->assign('aCounters', PostmanManager::getFeedsCounters());
-        $this->_renderer->assign('iTotal', PostmanManager::getFeedsTotal());
+        // $postman = [];
+        // $postman['total'] = PostmanManager::getFeedsTotal();
+        // $postman['counters'] = PostmanManager::getFeedsCounters();
+
+        // $this->_renderer->assign('postman', PostmanManager::info());
     }
 
     public function lockAction() {

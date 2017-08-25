@@ -11,8 +11,9 @@
 					{if isset($aImages)}
 						{foreach from=$aImages item=img key=ik}
 						<li>
+							<a href="{$base}/article-image/{$ik}/remove" class="icon-close" data-js="remove-image" data-asset="{$img.name}"></a>
 							<figure class="thumbnail">
-								<a href="{$base}/article-image/{$ik}/remove" class="icon-close" data-js="remove-image" data-asset="{$img.name}"></a>
+								
 								<img width="120" height="120" data-src="{$site}/image.php?img={$sUrl}{$img.name}&size=120x120" data-article-image="{$ik}" data-asset="{$img.name}">
 							</figure>
 						</li>

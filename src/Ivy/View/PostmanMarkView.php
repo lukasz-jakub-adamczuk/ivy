@@ -112,12 +112,6 @@ class PostmanMarkView extends IndexView {
 
                 $this->_renderer->assign('aList', $aElements);
             }
-
-            // count counters for all feeds
-            // PostmanNotification::analyzeFeeds();
-
-            // $this->_renderer->assign('aCounters', PostmanNotification::getFeedsCounters());
-            // $this->_renderer->assign('iTotal', PostmanNotification::getFeedsTotal());
         }
     }
 }

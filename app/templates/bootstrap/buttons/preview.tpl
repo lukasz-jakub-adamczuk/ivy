@@ -1,1 +1,0 @@
-<button name="button" type="sumbit" class="btn btn-default" value="preview" data-js="preview">Podgląd</button>
