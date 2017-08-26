@@ -67,28 +67,14 @@ class NewsController extends FrontController {
             if (isset($aImgs['used'])) {
                 // maybe rearrange
             }
-
-            // delete images
-            // if (isset($aImgs['del'])) {
-            // }
-            
-            // print_r($aImgs);
-            
-
-            
         }
     }
 
     private function _createRssFeed() {
-        // echo 'create RSS Feed';
+        $newsCollection = Dao::collection('news');
+        $news = $newsCollection->getNewsForRssFeed(10);
 
-        // require_once ROOT_DIR . '/app/helpers/RssFeedGenerator.php';
-
-        $oNewsCollection = Dao::collection('news');
-        $aNews = $oNewsCollection->getNewsForRssFeed(10);
-
-        // ksort($aActivities)
-        foreach ($aNews as &$item) {
+        foreach ($news as &$item) {
             // rss
             $item['title'] = stripslashes($item['title']);
             $item['link'] = SITE_URL . '/' . ValueMapper::getUrl('news').'/'.str_replace('-', '/', substr($item['creation_date'], 0, 10)).'/'.$item['slug'];
@@ -99,13 +85,7 @@ class NewsController extends FrontController {
             $item['pubdate'] = $objDateTime->format(\DateTime::RSS);
         }
 
-
-
-        // RssFeedGenerator::create('news', 10);
-
-        RssFeedGenerator::create($aNews);
-
+        RssFeedGenerator::create($news);
         RssFeedGenerator::save(CACHE_DIR . '/rss.xml');
-
     }
 }
