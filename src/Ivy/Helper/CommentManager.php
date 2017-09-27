@@ -26,32 +26,35 @@ class CommentManager {
             'news',
             'article',
             'story',
+            'gallery',
             'user'
         );
 
-        $commentsCollection = Dao::collection('comments');
+        $commentsCollection = Dao::collection('comment');
 
         // check does storage dir exists
         FileStorage::checkStorage(CACHE_DIR . '/sql');
 
-        $storageKey = CACHE_DIR . '/sql/all-unauthorized-comments';
-        if (FileStorage::is($storageKey)) {
-            $counters['unauthorized'] = FileStorage::restore($storageKey);
+        $allCommentsKey = CACHE_DIR . '/sql/all-unauthorized-comments';
+        if (FileStorage::is($allCommentsKey)) {
+            $counters = FileStorage::restore($allCommentsKey);
         } else {
             foreach ($elements as $element) {
-                $storageKey = CACHE_DIR . '/sql/unauthorized-'.$element.'-comments';
-                if (FileStorage::is($storageKey)) {
-                    $counters['unauthorized'][$element.'-comment'] = FileStorage::get($storageKey);
+                $commentsKey = CACHE_DIR . '/sql/unauthorized-'.$element.'-comments';
+                if (FileStorage::is($commentsKey)) {
+                    $counters[$element.'-comment']['value'] = FileStorage::get($commentsKey);
                 } else {
-                    $counters['unauthorized'][$element.'-comment'] = $commentsCollection->getUnauthorizedComments($element);
-                    FileStorage::set($storageKey, $counters['unauthorized'][$element.'-comment']);
+                    $counters[$element.'-comment']['value'] = $commentsCollection->getUnauthorizedComments($element);
+                    FileStorage::set($commentsKey, $counters[$element.'-comment']);
                 }
             }
 
-            FileStorage::store($storageKey, $counters['unauthorized']);
+            FileStorage::store($allCommentsKey, $counters);
         }
 
-        self::$_total = array_sum($counters['unauthorized']);
+        foreach ($counters as $comments) {
+            self::$_total += $comments['value'];
+        }
         
         self::$_counters = $counters;
     }

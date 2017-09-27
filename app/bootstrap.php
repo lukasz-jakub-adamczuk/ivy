@@ -22,6 +22,7 @@ if (!$env) {
             $env = 'local';
             break;
     }
+    $_ENV['app'] = $env;
 }
 
 // config loading

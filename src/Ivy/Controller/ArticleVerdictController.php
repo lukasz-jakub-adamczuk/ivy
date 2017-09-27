@@ -2,6 +2,8 @@
 
 namespace Ivy\Controller;
 
+use Aya\Core\Dao;
+
 class ArticleVerdictController extends FrontController {
 
     public function afterUpdate($iId) {
@@ -17,13 +19,14 @@ class ArticleVerdictController extends FrontController {
                 }
             }
 
+
+
             // add article and features to verdict
-            $oEntity->setField('id_article', $_POST['hidden']['id_article']);
+            $oEntity->setField('id_article', $_POST['dataset']['id_article']);
             $oEntity->setField('features', json_encode($aFeatures, JSON_UNESCAPED_UNICODE));
             // print_r($oEntity);
 
             if ($oEntity->update()) {
-                // echo $oEntity->getQuery();
                 $this->raiseInfo('Werdykt <strong>'.$iId.'</strong> został zmieniony.');
             } else {
                 $this->raiseError('Werdykt <strong>'.$iId.'</strong> nie został zmieniony.');

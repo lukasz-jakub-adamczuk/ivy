@@ -2,7 +2,7 @@
 
 namespace Ivy\View;
 
-use Aya\Management\IndexView;
+use Aya\Mvc\IndexView;
 
 class CupIndexView extends IndexView {
 

@@ -3,7 +3,7 @@
 namespace Ivy\View;
 
 use Aya\Core\Dao;
-use Aya\Management\IndexView;
+use Aya\Mvc\IndexView;
 
 use Ivy\Helper\MassActions;
 use Ivy\Helper\PostmanManager;
@@ -25,7 +25,6 @@ class PostmanIndexView extends IndexView {
         return array(
             'refresh' => array(
                 'name' => 'refresh',
-                // 'href' => str_replace(BASE_URL.'/', '', $_SERVER['HTTP_REFERER']),
                 'href' => 'postman/index/'.$_GET['path'],
                 'icon' => 'refresh',
                 'title' => 'Odśwież'
@@ -40,33 +39,12 @@ class PostmanIndexView extends IndexView {
                 'type' => 'text',
                 'default' => '',
                 'selected' => 'null'
-            ),
-            // 'id_user_group' => array(
-            //     'label' => 'Grupa',
-            //     'type' => 'select',
-            //     'options' => array('null' => '---'),
-            //     'default' => '',
-            //     'selected' => 'null'
-            // )
+            )
         );
         return $aFilters;
     }
 
     public function fill() {
-        // $this->_handleCollection();
-
-        // $aRows = $this->_oCollection->getRows();
-
-        // $aRows = $this->postProccessDataset($aRows);
-        
-
-        // $this->_handleFilters();
-        
-        // $this->_handleDataset($aRows);
-
-        // $this->_handleNavigator();
-
-        // $this->_handlePaginator();        
     }
 
     public function afterFill() {
@@ -79,8 +57,8 @@ class PostmanIndexView extends IndexView {
             
             $aFeedStats = array();
             if (file_exists($sFeedFile)) {
-                $sFeedStatsFile = TMP_DIR . '/feeds/'.$_GET['path'].'.json';
-                $sFeedLocksFile = TMP_DIR . '/feeds/locks/'.$_GET['path'].'.json';
+                $sFeedStatsFile = CACHE_DIR . '/feeds/'.$_GET['path'].'.json';
+                $sFeedLocksFile = CACHE_DIR . '/feeds/locks/'.$_GET['path'].'.json';
                 
                 if (file_exists($sFeedStatsFile)) {
                     $aFeedStats = unserialize(file_get_contents($sFeedStatsFile));
@@ -88,7 +66,6 @@ class PostmanIndexView extends IndexView {
                 if (file_exists($sFeedLocksFile)) {
                     $aFeedLocks = unserialize(file_get_contents($sFeedLocksFile));
                 }
-                // print_r($aFeedStats);
 
                 // items from feed
                 $sContent = file_get_contents($sFeedFile);

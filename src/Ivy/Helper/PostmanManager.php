@@ -27,8 +27,6 @@ class PostmanManager {
         if (file_exists($configInCacheFile)) {
             $sections = unserialize(file_get_contents($configInCacheFile));
         } else {
-            // require_once dirname(ROOT_DIR) . '/XhtmlTable/Aya/Yaml/AyaYamlLoader.php';
-
             $sitesConfFile = APP_DIR . '/conf/postman/feeds.yml';
 
             $sections = Yaml::parse(file_get_contents($sitesConfFile));
@@ -59,6 +57,7 @@ class PostmanManager {
             if (file_exists($feedFile)) {
                 $elements = json_decode(file_get_contents($feedFile), true);
             }
+            // print_r($elements);
             $feedStats = array();
             if (file_exists($feedStatsFile)) {
                 $feedStats = unserialize(file_get_contents($feedStatsFile));

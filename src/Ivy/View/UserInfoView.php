@@ -2,7 +2,7 @@
 
 namespace Ivy\View;
 
-use Aya\Management\InfoView;
+use Aya\Mvc\InfoView;
 
 class UserInfoView extends InfoView {
 

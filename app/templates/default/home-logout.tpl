@@ -3,3 +3,4 @@
 			<p>Zapraszamy ponownie.</p>
 			<a href="{$base}">Zalogouj ponownie</a>
 		</article>
+		

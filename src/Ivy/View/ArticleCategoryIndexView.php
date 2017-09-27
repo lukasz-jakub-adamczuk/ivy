@@ -3,7 +3,7 @@
 namespace Ivy\View;
 
 use Aya\Core\Dao;
-use Aya\Management\IndexView;
+use Aya\Mvc\IndexView;
 
 use Ivy\Helper\MassActions;
 use Ivy\Helper\RelatedActions;

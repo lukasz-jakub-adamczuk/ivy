@@ -4,7 +4,7 @@
 						{include file='controls/section-buttons.tpl'}
 						<section class="col">
 							{include file='controls/authors.tpl'}
-							{include file='controls/articles.tpl'}
+							{include file='controls/verdict-article.tpl'}
 							{include file='controls/ratings.tpl'}
 						</section>
 						<section class="col">

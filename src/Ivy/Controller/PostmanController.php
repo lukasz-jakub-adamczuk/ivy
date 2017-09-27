@@ -6,6 +6,12 @@ use Ivy\Helper\PostmanManager;
 
 class PostmanController extends FrontController {
 
+    public function beforeAction() {
+        parent::beforeAction();
+
+        $this->_renderer->assign('counters', PostmanManager::getFeedsCounters());
+    }
+
     public function indexAction() {
         parent::indexAction();
 
@@ -28,7 +34,7 @@ class PostmanController extends FrontController {
         }
 
         if ($aIds && $sPath) {
-            $sFeedFile = TMP_DIR . '/feeds/'.$sPath.'.json';
+            $sFeedFile = CACHE_DIR . '/feeds/'.$sPath.'.json';
             if (!file_exists($sFeedFile)) {
                 $aFeed = array();
                 $sFeedDir = dirname($sFeedFile);
@@ -54,11 +60,7 @@ class PostmanController extends FrontController {
 
         PostmanManager::analyzeFeeds();
 
-        // $postman = [];
-        // $postman['total'] = PostmanManager::getFeedsTotal();
-        // $postman['counters'] = PostmanManager::getFeedsCounters();
-
-        // $this->_renderer->assign('postman', PostmanManager::info());
+        $this->_renderer->assign('counters', PostmanManager::getFeedsCounters());
     }
 
     public function lockAction() {
@@ -77,7 +79,7 @@ class PostmanController extends FrontController {
         }
 
         if ($aIds && $sPath) {
-            $sFeedFile = TMP_DIR . '/feeds/locks/'.$sPath.'.json';
+            $sFeedFile = CACHE_DIR . '/feeds/locks/'.$sPath.'.json';
             if (!file_exists($sFeedFile)) {
                 $aFeed = array();
                 $sFeedDir = dirname($sFeedFile);
@@ -118,7 +120,7 @@ class PostmanController extends FrontController {
         }
 
         if ($aIds && $sPath) {
-            $sFeedFile = TMP_DIR . '/feeds/locks/'.$sPath.'.json';
+            $sFeedFile = CACHE_DIR . '/feeds/locks/'.$sPath.'.json';
             if (file_exists($sFeedFile)) {
                 $aFeed = unserialize(file_get_contents($sFeedFile));
             }

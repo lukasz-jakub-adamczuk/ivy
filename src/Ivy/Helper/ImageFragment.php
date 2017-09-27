@@ -2,6 +2,9 @@
 
 namespace Ivy\Helper;
 
+use Aya\Core\Dao;
+use Aya\Helper\MessageList;
+
 class ImageFragment {
 
 	public static function handleImageFragment($mId, $sImageType, $iImageTypeId, $sObject) {
@@ -56,8 +59,11 @@ class ImageFragment {
 				
 				$oFragmentEntity->setFields($_POST['fragment'][$sImageType]);
 
+				print_r($_POST['fragment'][$sImageType]);
+
 				// TODO be sure that cover is value '1'
 				$oFragmentEntity->setField('id_fragment_type', $iImageTypeId);
+				$oFragmentEntity->setField('name', 'de-short-film');
 				$oFragmentEntity->setField('id_author', $_POST['dataset']['id_author']);
 
 				// no creation date

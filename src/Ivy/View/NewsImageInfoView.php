@@ -3,8 +3,8 @@
 namespace Ivy\View;
 
 use Aya\Core\Dao;
-use Aya\Management\InfoView;
-// use Aya\Management\InfoView;
+use Aya\Mvc\InfoView;
+// use Aya\Mvc\InfoView;
 // require_once AYA_DIR.'/Core/Folder.php';
 
 class NewsImageInfoView extends InfoView {

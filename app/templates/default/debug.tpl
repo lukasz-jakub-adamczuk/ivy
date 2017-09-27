@@ -6,7 +6,8 @@
 			{else}
 				<a id="console-tgr" href="{$base}/{$ctrl}/set/console/1" data-href="{$base}/{$ctrl}/reset/console">Konsola (pokaż)</a>
 			{/if}
-			<div class="stack"{if !isset($smarty.session._params_.console)} style="display: none;"{/if}>
+			<!-- <div class="stack"{if !isset($smarty.session._params_.console)} style="display: none;"{/if}> -->
+			<div class="stack">
 				{foreach from=$aLogs item=log}
 				<div{if isset($log.logtype)} class="{$log.logtype}"{/if}>
 					<p><span class="line"><strong>{$log.line}</strong></span><span class="file" title="{$log.file}">{$log.file_short}</span><span class="name">{$log.name|default:'unknown'}</span></p>

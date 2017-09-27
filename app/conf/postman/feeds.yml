@@ -22,15 +22,15 @@ vgleaks:
 siliconera:
   name: Siliconera,
   icon-url: 'http://siliconera.com/favicon.ico'
-seorigin:
-  name: SE Origin,
-  icon-url: 'http://enixorigin.com/favicon.ico'
 gematsu:
   name: Gematsu,
   icon-url: 'http://gematsu.com/wp-content/themes/2014/images/favicon.png'
 novacrystallis:
   name: Nova Crystallis,
   icon-url: 'http://www.novacrystallis.com/wp-content/themes/nova3/favicon2.png'
+dualshockers:
+  name: Dual Shockers,
+  icon-url: 'http://www.dualshockers.com/favicon.ico'
 reddit:
   name: Reddit SE,
   icon-url: 'http://www.redditstatic.com/icon.png'
@@ -52,6 +52,3 @@ redditkh:
 reddith:
   name: Reddit H,
   icon-url: 'http://www.redditstatic.com/icon.png'
-dualshockers:
-  name: Dual Shockers,
-  icon-url: 'http://www.dualshockers.com/favicon.ico'

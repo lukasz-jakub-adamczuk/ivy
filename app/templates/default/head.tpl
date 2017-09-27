@@ -8,5 +8,5 @@
     <link rel="stylesheet" type="text/css" href="{$base}/icomoon/style.css">
     <link rel="stylesheet" type="text/css" href="{$base}/js/Pikaday/css/pikaday.css">
 
-    <link rel="shortcut icon" type="image/x-icon" href="{$base}/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="{$base}/favicon-512x512.png" />
 </head>

@@ -86,8 +86,9 @@ class FileBroker {
                     $src = $sCompletePath . '/' . $file;
                     $dst = $dir . '/' . $file;
                     $cmd = "mkdir -p $dir && cp $src $dst";
-                    // echo $cmd;
-                    exec($cmd);
+                    passthru($cmd);
+                    
+                    MessageList::raiseInfo('Komenda '.$cmd.' została uruchomiona.');
                 }
             }
 

@@ -3,7 +3,7 @@
 namespace Ivy\View;
 
 use Aya\Core\Dao;
-use Aya\Management\InfoView;
+use Aya\Mvc\InfoView;
 
 class CupPlayerInfoView extends InfoView {
 

@@ -2,6 +2,8 @@
 
 namespace Ivy\Controller;
 
+use Aya\Core\Dao;
+
 class ArticleCategoryController extends FrontController {
 
     public function afterInsert($iId) {

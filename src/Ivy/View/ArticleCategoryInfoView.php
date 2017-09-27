@@ -4,7 +4,7 @@ namespace Ivy\View;
 
 use Aya\Core\Dao;
 use Aya\Core\Folder;
-use Aya\Management\InfoView;
+use Aya\Mvc\InfoView;
 
 class ArticleCategoryInfoView extends InfoView {
 

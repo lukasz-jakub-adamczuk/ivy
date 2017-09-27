@@ -3,7 +3,7 @@
 namespace Ivy\View;
 
 use Aya\Core\Dao;
-use Aya\Management\InfoView;
+use Aya\Mvc\InfoView;
 use Aya\Helper\ValueMapper;
 
 class ArticleInfoView extends InfoView {
@@ -30,8 +30,16 @@ class ArticleInfoView extends InfoView {
             // preview
             $aPreviewer = array();
             // $aPreviewer['url'] = SITE_URL . '/{#$ctrl#}/{$aCategories[$aFields.id_article_category].slug}/{$aFields.slug}';
-            $aPreviewer['url'] = SITE_URL . '/gry/category/slug';
-            $aPreviewer['pattern'] = SITE_URL . '/'.ValueMapper::getUrl('article').'/{category}/{slug}';
+            // $aPreviewer['url'] = SITE_URL . '/gry/category/slug';
+            // TODO REFACTOR
+            // need to make ctrl independent
+            $aPreviewer['pattern'] = SITE_URL . '/ctrl/category/slug';
+            $aPreviewer['url'] = [
+                'ctrl' => 'gry',
+                'category' => 'id_article_category',
+                'slug' => 'slug'
+            ];
+
             $aPreviewer['label'] = 'zobacz treść na stronie';
             $this->_renderer->assign('aPreviewer', $aPreviewer);
 
