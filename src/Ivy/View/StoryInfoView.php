@@ -45,13 +45,18 @@ class StoryInfoView extends InfoView {
             $oChangeLogs = Dao::collection('change-log');
             $this->_renderer->assign('aChangeLogs', $oChangeLogs->getChangeLogs('story', $mId));
 
+            // fragment image
+            $aFragmentImage = array();
+            
             // logo image
             $oLogoImage = Dao::entity('object-fragment');
-            $this->_renderer->assign('aLogoImage', $oLogoImage->getImageFragment('story', $mId, 1));
+            $aFragmentImage['logo'] = $oLogoImage->getImageFragment('story', $mId, 1);
 
             // cover image
             $oCoverImage = Dao::entity('object-fragment');
-            $this->_renderer->assign('aCoverImage', $oCoverImage->getImageFragment('story', $mId, 2));
+            $aFragmentImage['cover'] = $oCoverImage->getImageFragment('story', $mId, 2);
+
+            $this->_renderer->assign('aFragmentImage', $aFragmentImage);
         }
     }
 }

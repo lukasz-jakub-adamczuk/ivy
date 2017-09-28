@@ -12,18 +12,18 @@ class StreamManager {
         if ($mButton == 'promote') {
             StreamManager::_addItem($sName, $mId);
         }
+
+        StreamManager::clearStreamCache();
     }
 
     private static function _addItem($sName, $mId) {
-        $sStreamFile = CACHE_DIR.'/stream';
+        $sStreamFile = CACHE_DIR.'/stream-'.$sName;
         if (file_exists($sStreamFile)) {
             $aStreamItems = unserialize(file_get_contents($sStreamFile));
-            if (!isset($aStreamItems[$sName][$mId])) {
-                $aItems = $aStreamItems[$sName];
-                array_pop($aItems);
-                $aReversedItems = array_reverse($aItems);
-                $aReversedItems[$mId] = self::_prepareItem($sName, $mId);
-                $aStreamItems[$sName] = array_reverse($aReversedItems);
+            if (!isset($aStreamItems[$mId])) {
+                array_pop($aStreamItems);
+                $item = StreamManager::_prepareItem($sName, $mId);
+                $aStreamItems = [$mId => $item] + $aStreamItems;
 
                 file_put_contents($sStreamFile, serialize($aStreamItems));
             }
@@ -42,11 +42,11 @@ class StreamManager {
             'user' => $_POST['dataset']['id_author'],
             'comments' => '???',
             'category_slug' => isset($_POST['hidden']['category']) ? Text::slugify($_POST['hidden']['category']) : '',
-            'category' => isset($_POST['hidden']['category']) ? $_POST['hidden']['category'] : '',
+            'category_name' => isset($_POST['hidden']['category']) ? $_POST['hidden']['category'] : '',
             // 'category_abbr' => isset($_POST['hidden']['abbr']) ? Text::slugify($_POST['hidden']['abbr']) : '',
             'fragment' => isset($_POST['fragment']['cover']['fragment']) ? $_POST['fragment']['cover']['fragment'] : '',
             'type' => $sName,
-            'url' => 'url'
+            // 'url' => 'url'
         );
 
         return $aItem;

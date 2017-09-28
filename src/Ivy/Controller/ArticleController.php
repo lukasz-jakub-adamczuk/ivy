@@ -19,7 +19,7 @@ class ArticleController extends FrontController {
 
         StreamManager::handleItem('article', $mId);
 
-        StreamManager::clearStreamCache('article');
+        // StreamManager::clearStreamCache('article');
     }
 
     public function afterUpdate($mId) {
@@ -28,6 +28,6 @@ class ArticleController extends FrontController {
 
         StreamManager::handleItem('article', $mId);
 
-        StreamManager::clearStreamCache('article');
+        // StreamManager::clearStreamCache('article');
     }
 }
