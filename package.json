@@ -1,0 +1,25 @@
+{
+  "name": "ivy",
+  "version": "1.0.0",
+  "description": "squarezone admin",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta"
+  },
+  "devDependencies": {
+    "bootstrap": "^4.0.0-beta"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukasz-jakub-adamczuk/ivy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukasz-jakub-adamczuk/ivy/issues"
+  },
+  "homepage": "https://github.com/lukasz-jakub-adamczuk/ivy#readme"
+}
