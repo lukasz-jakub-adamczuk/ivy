@@ -6,21 +6,24 @@ class RelatedActions {
 
     private static $_aActions = array(
         'refresh' => array(
-            'name' => 'Usuń',
+            'name' => 'Odśwież',
             'href' => '{$ctrl}',
             'icon' => 'refresh',
+            'class' => 'btn btn-outline-secondary',
             'title' => 'Odśwież'
         ),
         'order' => array(
             'name' => 'Zmień kolejność',
             'href' => '{$ctrl}/order',
             'icon' => 'order',
+            'class' => 'btn btn-outline-secondary',
             'title' => 'Zmień kolejność'
         ),
         'add' => array(
             'name' => 'Dodaj',
             'href' => '{$ctrl}/add',
             'icon' => 'add',
+            'class' => 'btn btn-outline-primary',
             'title' => 'Dodaj',
         )
     );

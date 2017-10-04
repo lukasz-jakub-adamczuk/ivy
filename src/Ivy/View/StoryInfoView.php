@@ -7,27 +7,33 @@ use Aya\Mvc\InfoView;
 
 class StoryInfoView extends InfoView {
 
+    public function fill() {
+        parent::fill();
+        $this->_renderer->assign('sFormMainPartTemplate', 'forms/article-info-main.tpl');
+        $this->_renderer->assign('sFormSubPartTemplate', 'forms/article-info-sub.tpl');
+    }
+
     public function afterFill() {
-        $this->_renderer->assign('sHeader', 'Artykuł (publicystyka)');
+        $this->_renderer->assign('header', 'Artykuł (publicystyka)');
 
         $mId = isset($_GET['id']) ? $_GET['id'] : 0;
 
         // authors
         $oAuthors = Dao::collection('user');
-        $this->_renderer->assign('aAuthors', $oAuthors->getAuthors());
+        $this->_renderer->assign('authors', $oAuthors->getAuthors());
 
         // categories
         $oCategories = Dao::collection('story-category');
-        $this->_renderer->assign('aCategories', $oCategories->getCategories());
+        $this->_renderer->assign('categories', $oCategories->getCategories());
 
         // templates
         // $oTemplates = Dao::collection('article-template');
-        // $this->_renderer->assign('aTemplates', $oTemplates->getTemplates());
+        // $this->_renderer->assign('templates', $oTemplates->getTemplates());
         
         if ($mId) {
             // preview
             $aPreviewer = array();
-            // $aPreviewer['url'] = SITE_URL . '/{#$ctrl#}/{$aCategories[$aFields.id_article_category].slug}/{$aFields.slug}';
+            // $aPreviewer['url'] = SITE_URL . '/{#$ctrl#}/{$categories[$aFields.id_article_category].slug}/{$aFields.slug}';
             // $aPreviewer['url'] = SITE_URL . '/gry/category/slug';
             // TODO REFACTOR
             // need to make ctrl independent
@@ -46,17 +52,17 @@ class StoryInfoView extends InfoView {
             $this->_renderer->assign('aChangeLogs', $oChangeLogs->getChangeLogs('story', $mId));
 
             // fragment image
-            $aFragmentImage = array();
+            $fragmentImage = array();
             
             // logo image
             $oLogoImage = Dao::entity('object-fragment');
-            $aFragmentImage['logo'] = $oLogoImage->getImageFragment('story', $mId, 1);
+            $fragmentImage['logo'] = $oLogoImage->getImageFragment('story', $mId, 1);
 
             // cover image
             $oCoverImage = Dao::entity('object-fragment');
-            $aFragmentImage['cover'] = $oCoverImage->getImageFragment('story', $mId, 2);
+            $fragmentImage['cover'] = $oCoverImage->getImageFragment('story', $mId, 2);
 
-            $this->_renderer->assign('aFragmentImage', $aFragmentImage);
+            $this->_renderer->assign('fragmentImage', $fragmentImage);
         }
     }
 }

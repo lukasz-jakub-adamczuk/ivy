@@ -18,7 +18,7 @@ class ArticleVerdictInfoView extends InfoView {
         // authors
         $oAuthors = Dao::collection('user');
         
-        $this->_renderer->assign('aAuthors', $oAuthors->getAuthors());
+        $this->_renderer->assign('authors', $oAuthors->getAuthors());
 
         // articles
         $oArticles = Dao::collection('article');

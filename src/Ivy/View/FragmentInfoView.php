@@ -45,7 +45,7 @@ class FragmentInfoView extends InfoView {
 
         // authors
         $oAuthors = Dao::collection('user');
-        $this->_renderer->assign('aAuthors', $oAuthors->getAuthors());
+        $this->_renderer->assign('authors', $oAuthors->getAuthors());
 
         // categories
         $oFragmentTypes = Dao::collection('FragmentType');

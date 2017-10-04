@@ -7,7 +7,7 @@ use Aya\Mvc\IndexView;
 
 class PostmanMarkView extends IndexView {
 
-    private $_aSections;
+    private $_sections;
 
     protected function _getSections() {
         return PostmanNotification::getFeedsSections();
@@ -45,7 +45,7 @@ class PostmanMarkView extends IndexView {
     }
 
     public function afterFill() {
-        $this->_renderer->assign('sHeader', 'Listonosz');
+        $this->_renderer->assign('header', 'Listonosz');
 
         if (isset($_GET['path'])) {
             $this->_renderer->assign('sPath', $_GET['path']);
@@ -88,7 +88,7 @@ class PostmanMarkView extends IndexView {
                     $aElements[] = $aTmp;
                 }
 
-                $this->_renderer->assign('aList', $aElements);
+                $this->_renderer->assign('list', $aElements);
             }
         }
     }

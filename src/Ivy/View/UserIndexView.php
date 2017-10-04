@@ -47,7 +47,7 @@ class UserIndexView extends IndexView {
     // }
 
     public function afterFill() {
-        $this->_renderer->assign('sHeader', 'Użytkownicy');
+        $this->_renderer->assign('header', 'Użytkownicy');
 
         // user groups
         $oUserGroups = Dao::collection('user-group');

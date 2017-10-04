@@ -7,16 +7,31 @@ use Aya\Mvc\IndexView;
 
 use Ivy\Helper\MassActions;
 
-class FragmentIndexView extends IndexView {
+class TextIndexView extends IndexView {
 
-    // protected function _getSections() {
-    //     $sections = array(
-    //         'fragment' => array(
-    //             'name' => 'Fragmenty',
-    //         )
-    //     );
-    //     return $sections;
-    // }
+    public $type;
+
+    public function init() {
+        $parts = explode('\\', get_class($this));
+        $class = array_pop($parts);
+        $this->type = strtolower(str_replace('IndexView', '', $class));
+
+        parent::init();
+    }
+
+    protected function _getSections() {
+        $sections = [
+            'article' => [
+                'name' => 'Gry',
+                'icon' => 'icon-game'
+            ],
+            'story' => [
+                'name' => 'Publicystyka',
+                'icon' => 'icon-article'
+            ]
+        ];
+        return $sections;
+    }
 
     protected function _getMassActions() {
         return MassActions::getStandardActions();
@@ -30,7 +45,7 @@ class FragmentIndexView extends IndexView {
                 'default' => '',
                 'selected' => 'null'
             ),
-            'id_fragment_type' => array(
+            'id_'.$this->type.'_category' => array(
                 'label' => 'Kategoria',
                 'type' => 'select',
                 'options' => array('null' => '---'),
@@ -48,11 +63,15 @@ class FragmentIndexView extends IndexView {
         return $aFilters;
     }
 
+    public function beforeFill() {
+        $this->_iCollectionSize = 50;
+    }
+
     public function afterFill() {
-        $this->_renderer->assign('header', 'Fragmenty');
+        $this->_renderer->assign('header', 'Artykuły');
 
         // categories
-        $oCategories = Dao::collection('fragment-type');
+        $oCategories = Dao::collection(''.$this->type.'-category');
         $oCategories->orderby('name');
         $oCategories->load(-1);
 
@@ -62,7 +81,7 @@ class FragmentIndexView extends IndexView {
         $oAuthors->load(-1);
 
         $aFilterValues = array();
-        $aFilterValues['id_fragment_type'] = $oCategories->getColumn();
+        $aFilterValues['id_'.$this->type.'_category'] = $oCategories->getColumn();
         $aFilterValues['id_author'] = $oAuthors->getColumn();
         $this->_renderer->assign('aFilterValues', $aFilterValues);
     }

@@ -10,12 +10,12 @@ use Ivy\Helper\MassActions;
 class ArticleVerdictIndexView extends IndexView {
 
     protected function _getSections() {
-        $aSections = array(
+        $sections = array(
             'article-verdict' => array(
                 'name' => 'Werdykty',
             )
         );
-        return $aSections;
+        return $sections;
     }
 
     protected function _getMassActions() {

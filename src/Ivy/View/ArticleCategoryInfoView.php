@@ -20,10 +20,10 @@ class ArticleCategoryInfoView extends InfoView {
     }
 
     public function afterFill() {
-        $this->_renderer->assign('sHeader', 'Kategoria (gra)');
+        $this->_renderer->assign('header', 'Kategoria (gra)');
 
         // authors
         $oAuthors = Dao::collection('user');
-        $this->_renderer->assign('aAuthors', $oAuthors->getAuthors());
+        $this->_renderer->assign('authors', $oAuthors->getAuthors());
     }
 }

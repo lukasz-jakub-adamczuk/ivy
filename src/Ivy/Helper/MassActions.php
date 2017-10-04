@@ -9,18 +9,21 @@ class MassActions {
     private static $_aActions = array(
         'delete' => array(
             'name' => 'Usuń',
-            'icon' => 'trash',
+            'icon' => 'delete',
+            'class' => 'btn btn-outline-secondary',
             'title' => 'Usuń'
         ),
         'remove' => array(
             'name' => 'USUŃ',
-            'icon' => 'trash',
+            'icon' => 'remove',
+            'class' => 'btn btn-outline-danger',
             'title' => 'Usuń',
             'color' => 'red'
         ),
         'mark' => array(
             'name' => 'Oznacz',
-            'icon' => 'checkmark',
+            'icon' => 'done',
+            'class' => 'btn btn-outline-secondary',
             'title' => 'Oznacz jako przeczytane'
         ),
     );

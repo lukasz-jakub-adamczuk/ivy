@@ -17,14 +17,14 @@ class NewsImageInfoView extends InfoView {
         // authors
         // $oAuthors = Dao::collection('user');
         
-        // $this->_renderer->assign('aAuthors', $oAuthors->getAuthors());
+        // $this->_renderer->assign('authors', $oAuthors->getAuthors());
 
         // categories
         // $oCategories = Dao::collection('article-category');
         // $oCategories->orderby('name');
         // $oCategories->load(-1);
 
-        // $this->_renderer->assign('aCategories', $oCategories->getRows());
+        // $this->_renderer->assign('categories', $oCategories->getRows());
 
 
 

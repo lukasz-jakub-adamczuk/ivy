@@ -56,7 +56,7 @@ class CupPlayerIndexView extends IndexView {
     }
 
     public function afterFill() {
-        $this->_renderer->assign('sHeader', 'Mistrzostwa (zawodnicy)');
+        $this->_renderer->assign('header', 'Mistrzostwa (zawodnicy)');
 
         // tournament
         $oCups = Dao::collection('cup');

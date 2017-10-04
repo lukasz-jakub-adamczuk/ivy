@@ -18,6 +18,6 @@ class CupIndexView extends IndexView {
     // }
 
     public function afterFill() {
-        $this->_renderer->assign('sHeader', 'Mistrzostwa');
+        $this->_renderer->assign('header', 'Mistrzostwa');
     }
 }

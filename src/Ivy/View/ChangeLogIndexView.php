@@ -42,7 +42,7 @@ class ChangeLogIndexView extends IndexView {
     }
 
     public function afterFill() {
-        $this->_renderer->assign('sHeader', 'Historia zmian');
+        $this->_renderer->assign('header', 'Historia zmian');
 
         // categories
         $oCategories = Dao::collection('article-category');

@@ -8,13 +8,13 @@ use Aya\Mvc\InfoView;
 class NewsInfoView extends InfoView {
 
     public function beforeFill() {
-        $this->_renderer->assign('sHeader', 'Aktualność');
+        $this->_renderer->assign('header', 'Aktualność');
 
         $mId = isset($_GET['id']) ? $_GET['id'] : 0;
 
         // authors
         $oAuthors = Dao::collection('user');
-        $this->_renderer->assign('aAuthors', $oAuthors->getAuthors());
+        $this->_renderer->assign('authors', $oAuthors->getAuthors());
 
         if ($mId) {
             // changelogs

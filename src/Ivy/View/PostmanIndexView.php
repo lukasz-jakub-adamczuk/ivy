@@ -7,10 +7,11 @@ use Aya\Mvc\IndexView;
 
 use Ivy\Helper\MassActions;
 use Ivy\Helper\PostmanManager;
+use Ivy\Helper\RelatedActions;
 
 class PostmanIndexView extends IndexView {
 
-    private $_aSections;
+    private $_sections;
 
     protected function _getSections() {
         return PostmanManager::getFeedsSections();
@@ -21,15 +22,15 @@ class PostmanIndexView extends IndexView {
     }
 
     protected function _getRelatedActions() {
-        // return RelatedActions::getActions(array('refresh'));
-        return array(
-            'refresh' => array(
-                'name' => 'refresh',
-                'href' => 'postman/index/'.$_GET['path'],
-                'icon' => 'refresh',
-                'title' => 'Odśwież'
-            )
-        );
+        return RelatedActions::getActions(array('refresh'));
+        // return array(
+        //     'refresh' => array(
+        //         'name' => 'refresh',
+        //         'href' => 'postman/index/'.$_GET['path'],
+        //         'icon' => 'refresh',
+        //         'title' => 'Odśwież'
+        //     )
+        // );
     }
 
     protected function _getFilters() {
@@ -48,7 +49,7 @@ class PostmanIndexView extends IndexView {
     }
 
     public function afterFill() {
-        $this->_renderer->assign('sHeader', 'Listonosz');
+        $this->_renderer->assign('header', 'Listonosz');
         
         if (isset($_GET['path'])) {
             $this->_renderer->assign('sPath', $_GET['path']);
@@ -89,7 +90,7 @@ class PostmanIndexView extends IndexView {
                     $aElements[] = $aTmp;
                 }
 
-                $this->_renderer->assign('aList', $aElements);
+                $this->_renderer->assign('list', $aElements);
             }
         }
     }

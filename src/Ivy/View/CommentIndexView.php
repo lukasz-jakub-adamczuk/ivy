@@ -11,7 +11,7 @@ use Ivy\Helper\MassActions;
 class CommentIndexView extends IndexView {
 
     protected function _getSections() {
-        $aSections = array(
+        $sections = array(
             'news-comment' => array(
                 'name' => 'Aktualności',
                 'icon' => 'icon-news'
@@ -33,7 +33,7 @@ class CommentIndexView extends IndexView {
                 'icon' => 'icon-user'
             )
         );
-        return $aSections;
+        return $sections;
     }
 
     protected function _getMassActions() {
@@ -41,7 +41,7 @@ class CommentIndexView extends IndexView {
     }
 
     public function afterFill() {
-        $this->_renderer->assign('sHeader', 'Komentarze');
+        $this->_renderer->assign('header', 'Komentarze');
 
         // TODO refactor getting controller
         $this->_renderer->assign('sPrimaryKey', 'id_'.str_replace('-', '_', $_GET['ctrl']));
@@ -81,6 +81,6 @@ class CommentIndexView extends IndexView {
 
     protected function _handleDataset($aRows) {
         // list
-        $this->_renderer->assign('aList', $aRows);
+        $this->_renderer->assign('list', $aRows);
     }
 }

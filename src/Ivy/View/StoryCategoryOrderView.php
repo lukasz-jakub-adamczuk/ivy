@@ -16,7 +16,7 @@ class StoryCategoryOrderView extends View {
             // articles
             $oArticles = Dao::collection('story');
             
-            $aArticles = $oArticles->getStoriesByCategory($mId);
+            $aArticles = $oArticles->getArticlesByCategory($mId);
             $this->_renderer->assign('aElements', $aArticles);
 
             $this->_iElementsCounter = count($aArticles);
@@ -26,10 +26,10 @@ class StoryCategoryOrderView extends View {
             // categories
             $oCategories = Dao::collection('story-category');
             
-            $aCategories = $oCategories->getCategories();
-            $this->_renderer->assign('aElements', $aCategories);
+            $categories = $oCategories->getCategories();
+            $this->_renderer->assign('aElements', $categories);
 
-            $this->_iElementsCounter = count($aCategories);
+            $this->_iElementsCounter = count($categories);
         }
 
         $aOptions = range(1, $this->_iElementsCounter);
@@ -40,9 +40,9 @@ class StoryCategoryOrderView extends View {
         $mId = isset($_GET['id']) ? $_GET['id'] : null;
 
         if ($mId) {
-            $this->_renderer->assign('sHeader', 'Kolejność artykułów (publicystyka)');
+            $this->_renderer->assign('header', 'Kolejność artykułów (publicystyka)');
         } else {
-            $this->_renderer->assign('sHeader', 'Kolejność kategorii (publicystyka)');
+            $this->_renderer->assign('header', 'Kolejność kategorii (publicystyka)');
         }
     }
 }

@@ -8,7 +8,7 @@ use Aya\Mvc\InfoView;
 class CommentInfoView extends InfoView {
 
     public function afterFill() {
-        $this->_renderer->assign('sHeader', 'Komentarz');
+        $this->_renderer->assign('header', 'Komentarz');
 
         $this->_renderer->assign('sFormMainPartTemplate', 'forms/comment-info-main.tpl');
         $this->_renderer->assign('sFormSubPartTemplate', 'forms/comment-info-sub.tpl');
@@ -17,6 +17,6 @@ class CommentInfoView extends InfoView {
 
         // authors
         $oAuthors = Dao::collection('user');
-        $this->_renderer->assign('aAuthors', $oAuthors->getAuthors());
+        $this->_renderer->assign('authors', $oAuthors->getAuthors());
     }
 }

@@ -26,10 +26,10 @@ class ArticleCategoryOrderView extends View {
             // categories
             $oCategories = Dao::collection('article-category');
             
-            $aCategories = $oCategories->getCategories();
-            $this->_renderer->assign('aElements', $aCategories);
+            $categories = $oCategories->getCategories();
+            $this->_renderer->assign('aElements', $categories);
 
-            $this->_iElementsCounter = count($aCategories);
+            $this->_iElementsCounter = count($categories);
         }
 
         $aOptions = range(1, $this->_iElementsCounter);
@@ -40,9 +40,9 @@ class ArticleCategoryOrderView extends View {
         $mId = isset($_GET['id']) ? $_GET['id'] : null;
 
         if ($mId) {
-            $this->_renderer->assign('sHeader', 'Kolejność artykułów (gry)');
+            $this->_renderer->assign('header', 'Kolejność artykułów (gry)');
         } else {
-            $this->_renderer->assign('sHeader', 'Kolejność kategorii (gry)');
+            $this->_renderer->assign('header', 'Kolejność kategorii (gry)');
         }
     }
 }

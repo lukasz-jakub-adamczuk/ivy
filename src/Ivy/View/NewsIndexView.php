@@ -37,7 +37,7 @@ class NewsIndexView extends IndexView {
     }
 
     public function afterFill() {
-        $this->_renderer->assign('sHeader', 'Aktualności');
+        $this->_renderer->assign('header', 'Aktualności');
 
         // authors
         $oAuthors = Dao::collection('user');
