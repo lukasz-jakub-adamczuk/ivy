@@ -1,0 +1,81 @@
+.example-container {
+  width: 800px;
+  @include make-container();
+}
+
+.example-row {
+  @include make-row();
+}
+
+.form-content-main {
+  @include make-col-ready();
+
+  @include media-breakpoint-up(sm) {
+    @include make-col(12);
+  }
+  @include media-breakpoint-up(md) {
+    @include make-col(12);
+  }
+  @include media-breakpoint-up(lg) {
+    @include make-col(8);
+  }
+}
+
+.form-content-sub {
+  @include make-col-ready();
+
+  @include media-breakpoint-up(sm) {
+    @include make-col(12);
+  }
+  @include media-breakpoint-up(md) {
+    @include make-col(12);
+  }
+  @include media-breakpoint-up(lg) {
+    @include make-col(4);
+  }
+}
+
+.form-content-main .form-component {
+  @include make-col-ready();
+
+  @include media-breakpoint-up(xl) {
+    @include make-col(12);
+  }
+  margin-bottom: 1rem;
+}
+.form-content-sub .form-component {
+  @include make-col-ready();
+
+  @include media-breakpoint-up(sm) {
+    @include make-col(12);
+  }
+  @include media-breakpoint-up(md) {
+    @include make-col(6);
+  }
+  @include media-breakpoint-up(lg) {
+    @include make-col(12);
+  }
+  @include media-breakpoint-up(xl) {
+    @include make-col(6);
+  }
+  margin-bottom: 1rem;
+}
+
+.form-buttons {
+  @include make-col-ready();
+  
+  @include media-breakpoint-up(xl) {
+    @include make-col(12);
+  }
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+  border-top: 1px solid #aaa;
+}
+
+form .col {
+  background: #ccc;
+  padding-top: 1rem;
+}
+.form-label {
+  padding: 1rem 1rem 0;
+}

@@ -1,0 +1,21 @@
+
+@import 'bootstrap/bootstrap';
+@import 'override';
+
+
+@import 'base/icons';
+
+
+
+.visually-hidden {
+  display: none;
+}
+
+.image-fragment-preview {
+  picture {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+}
