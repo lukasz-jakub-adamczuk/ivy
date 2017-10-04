@@ -4,10 +4,10 @@
 								</div>
 								<div>
 									<select id="form-category" name="dataset[id_type]">
-									{foreach from=$aCategories item=c}
+									{foreach from=$categories item=c}
 										<option value="{$c.id_type}"{if $c.id_type eq $aFields.id_type} selected="selected"{/if}>{$c.name}</option>
 									{/foreach}
-									{foreach from=$aCategories item=c}
+									{foreach from=$categories item=c}
 										{if $c.id_type eq $aFields.id_type}<input id="form-category-slug" name="hidden[category]" type="hidden" value="{$c.name|stripslashes}">{/if}
 									{/foreach}
 									</select>

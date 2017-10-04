@@ -10,7 +10,7 @@
 					<h2>Todo <small>{$aCounts.todo|default:0}</small></h2>
 					<form method="post" action="{$base}/{$ctrl}/todo-doing">
 						<ul class="no-style">
-						{foreach from=$aList.todo item=todo}
+						{foreach from=$list.todo item=todo}
 							<li><label><input name="ids[]" type="checkbox" value="{$todo}" /> {$todo}</label></li>
 						{/foreach}
 						</ul>
@@ -21,7 +21,7 @@
 					<h2>Doing <small>{$aCounts.doing|default:0}</small></h2>
 					<form method="post" action="{$base}/{$ctrl}/todo-done">
 						<ul class="no-style">
-						{foreach from=$aList.doing item=doing}
+						{foreach from=$list.doing item=doing}
 							<li><label><input name="ids[]" type="checkbox" value="{$doing}" /> {$doing}</label></li>
 						{/foreach}
 						</ul>
@@ -31,7 +31,7 @@
 				<div class="box">
 					<h2>Done <small>{$aCounts.done|default:0}</small></h2>
 					<ul>
-					{foreach from=$aList.done item=done}
+					{foreach from=$list.done item=done}
 						<li>{$done}</li>
 					{/foreach}
 					</ul>

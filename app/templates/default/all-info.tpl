@@ -1,5 +1,5 @@
 		<article>
-			{include file='parts/info-header.tpl' header=$sHeader|default:'Szczegóły'}
+			{include file='parts/info-header.tpl' header=$header|default:'Szczegóły'}
 			<section>
 				<form method="post" action="{$base}/{$ctrl}/{$sFormMode}" class="table-form">
 					<div class="table-row">

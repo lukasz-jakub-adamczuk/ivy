@@ -1,5 +1,5 @@
 		<article>
-			{include file='common/info-header.tpl' header=$sHeader|default:'Szczegóły'}
+			{include file='common/info-header.tpl' header=$header|default:'Szczegóły'}
 			<section>
 				<ul class="tabs">
 					<li data-tab="tab-existing" class="active">Istniejące</li>

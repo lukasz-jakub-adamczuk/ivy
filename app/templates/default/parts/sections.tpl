@@ -1,6 +1,6 @@
-{if count($aSections) gt 1}
+{if count($sections) gt 1}
 <ul class="tabs">
-	{foreach from=$aSections item=s key=sk}
+	{foreach from=$sections item=s key=sk}
 	{if $sk eq $ctrl or (isset($smarty.get.path) and $sk eq $smarty.get.path)}
 		<li class="active">
 			<span{if isset($counters[$sk]) and $counters[$sk].value neq 0} class="count" data-count="{$counters[$sk].value}"{/if}>

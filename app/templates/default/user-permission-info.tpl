@@ -1,5 +1,5 @@
 		<article>
-			{include file='parts/info-header.tpl' header=$sHeader|default:'Uprawnienia użytkownika'}
+			{include file='parts/info-header.tpl' header=$header|default:'Uprawnienia użytkownika'}
 			<section>
 				<form method="post" action="{$base}/{$ctrl}/promote" class="clearfix">
 					<div class="table-row">
@@ -63,7 +63,7 @@
 								<table class="table permissions crud">
 									{include file='else/user-permission-info-table-header.tpl'}
 									<tbody>
-										{foreach from=$aCategories item=cat}
+										{foreach from=$categories item=cat}
 										<tr>
 											<td>{$cat.slug}</td>
 											<td><input name="dataset[perms][{$cat.slug}][]" type="checkbox" value="create"></td>

@@ -1,5 +1,5 @@
 <article>
-    {include file='parts/index-header.tpl' header=$sHeader|default:$aSections.$ctrl.name}
+    {include file='parts/index-header.tpl' header=$header|default:$sections.$ctrl.name}
     {include file='parts/sections.tpl'}
     <section class="container">
         <form method="post" action="{$base}/{$ctrl}">
@@ -11,7 +11,7 @@
             <input name="path" type="hidden" value="{$sPath}">
 
             <ul class="list-table">
-                {foreach from=$aList item=item key=ik}
+                {foreach from=$list item=item key=ik}
                 <li{if isset($item.unread)} class="unverified"{/if}>
                 {if !$item.lock}
                     <input id="item-{$ik}" name="ids[]" type="checkbox" value="{$item.hash|default:'null'}" class="list-checkbox mass-checkbox">

@@ -47,7 +47,7 @@
 								</div>
 								<div>
 									<select name="row">
-									{foreach from=$aCategories item=c}
+									{foreach from=$categories item=c}
 										<option value="{$c.name}">{$c.name}</option>
 									{/foreach}
 									</select>
@@ -59,7 +59,7 @@
 								</div>
 								<div>
 									<select name="row" size="10">
-									{foreach from=$aCategories item=c}
+									{foreach from=$categories item=c}
 										<option value="{$c.name}">{$c.name}</option>
 									{/foreach}
 									</select>

@@ -1,5 +1,5 @@
 		<article>
-			{include file='parts/index-header.tpl' header=$sHeader|default:$aSections.$ctrl.name}
+			{include file='parts/index-header.tpl' header=$header|default:$sections.$ctrl.name}
 			{include file='parts/sections.tpl'}
 			<section class="container">
 				<!-- <a href="{$base}/{$ctrl}/add">Nowy wpis</a> -->

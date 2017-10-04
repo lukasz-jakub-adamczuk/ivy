@@ -1,5 +1,5 @@
 {if $sFormMode eq 'update'}
-	{foreach from=$aCategories item=c}
+	{foreach from=$categories item=c}
 		{if isset($aFields[$aPreviewer.url.category]) and $c[$aPreviewer.url.category] eq $aFields[$aPreviewer.url.category]}
 			{assign "category" $c.slug}
 		{/if}

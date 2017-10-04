@@ -226,7 +226,7 @@ isis.actions = {
             }
             // return false;
         });
-
+/*
         // pill actions
         $('#toggle-layout .pill').unbind().click(function() {
             $(this).siblings().removeClass('active');
@@ -247,7 +247,7 @@ isis.actions = {
             $('#toggle-layout span')[0].click();
         } else {
             $('#toggle-layout .icon-' + localStorage.getItem('data-layout')).click();
-        }
+        }*/
     },
     runFileManagerInfoFileInfo: function() {
         // ...
