@@ -1,4 +1,4 @@
-<div id="overlay" class="hidden">
+<div id="overlay" hidden>
     <div class="dialog">
         <header>
             <h3>Komunikat</h3>

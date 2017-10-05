@@ -9,10 +9,19 @@
     <main class="container-fluid">
     {if $usr::set()}
         {include file='nav.tpl'}
-        {include file='dialog.tpl'}
-        {include file='messages.tpl'}
-        {include file="$content.tpl"}
-        {include file='footer.tpl'}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="sidebar col-md-2">
+                {include file='sidebar.tpl'}
+                </div>
+                <div class="content col-md-10">
+                {include file='dialog.tpl'}
+                {include file='messages.tpl'}
+                {include file="$content.tpl"}
+                {include file='footer.tpl'}
+                </div>
+            </div>
+        </div>
     {else}
         {include file='auth.tpl'}
     {/if}
