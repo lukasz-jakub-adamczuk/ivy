@@ -1,4 +1,4 @@
-<header class="inner">
-    <a href="{$base}" class="vam m-s icon-back"></a>
-    <h2 class="vam m-s">{$header}</h2>
+<header class="content-header">
+    <a href="{$base}" class="icon-back">Wstecz</a>
+    <h2>{$header}</h2>
 </header>

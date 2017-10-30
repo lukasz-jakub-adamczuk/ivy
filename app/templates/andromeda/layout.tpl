@@ -6,7 +6,7 @@
     {if $smarty.const.DEBUG_MODE}
         {include file='debug.tpl'}
     {/if}
-    <main class="container-fluid">
+    <!-- <main class="container-fluid"> -->
     {if $usr::set()}
         {include file='nav.tpl'}
         <div class="container-fluid">
@@ -25,7 +25,7 @@
     {else}
         {include file='auth.tpl'}
     {/if}
-    </main>
+    <!-- </main> -->
     {include file='scripts.tpl'}
 </body>
 </html>
