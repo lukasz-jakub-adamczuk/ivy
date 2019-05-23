@@ -5,7 +5,7 @@ date_default_timezone_set('Europe/Warsaw');
 setlocale(LC_ALL, 'pl_PL.UTF8');
 
 // env setup
-$env = getenv('IVY_ENV');
+$env = getenv('APP_ENV');
 
 if (!$env) {
     $httpHost = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
@@ -31,7 +31,6 @@ if ($env == 'prod') {
     require_once __DIR__ . '/config/prod.php';
 }
 if ($env == 'dev') {
-    // error_reporting(0);
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
     require_once __DIR__ . '/config/dev.php';

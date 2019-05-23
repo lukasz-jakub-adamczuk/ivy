@@ -1,0 +1,1 @@
+<a href="{$base}/{$ctrl}" class="h-padding">Wstecz</a>

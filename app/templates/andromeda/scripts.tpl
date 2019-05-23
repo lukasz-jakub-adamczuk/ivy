@@ -1,5 +1,5 @@
 <script type="text/javascript" src="{$base}/js/jquery-2.1.0.min.js"></script>
-<!-- <script type="text/javascript" src="{$base}/EpicEditor-v0.2.2/js/epiceditor.min.js"></script> -->
+<!-- <script type="text/javascript" src="{$base}/js/EpicEditor-v0.2.2/js/epiceditor.min.js"></script> -->
 <script type="text/javascript" src="{$base}/EpicEditor-v0.2.2/js/epiceditor.js"></script>
 <!-- <script type="text/javascript" src="{$base}/js/scripts.js"></script> -->
 <!-- <script type="text/javascript" src="{$base}/bootstrap-4.0.0-beta/dist/js/bootstrap.js"></script> -->
