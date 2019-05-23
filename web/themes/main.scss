@@ -1,0 +1,20 @@
+// @import 'bootstrap/bootstrap';
+// @import 'override';
+
+
+// @import 'base/icons';
+
+@import 'startbootstrap-sb-admin-2/scss/sb-admin-2';
+
+.visually-hidden {
+  display: none;
+}
+
+.image-fragment-preview {
+  picture {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+}
