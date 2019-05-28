@@ -1,12 +1,14 @@
 {
   "name": "Sortable",
-  "main": "Sortable.js",
-  "version": "0.4.0",
-  "homepage": "http://rubaxa.github.io/Sortable/",
-  "authors": [
-    "RubaXa <ibnRubaXa@gmail.com>"
+  "main": [
+    "Sortable.js"
   ],
-  "description": "Sortable is a minimlist JavaScript library for modern browsers and touch devices. No jQuery.",
+  "homepage": "http://SortableJS.github.io/Sortable/",
+  "authors": [
+    "RubaXa <ibnRubaXa@gmail.com>",
+    "owenm <owen23355@gmail.com>"
+  ],
+  "description": "JavaScript library for reorderable drag-and-drop lists on modern browsers and touch devices. No jQuery required. Supports Meteor, AngularJS, React, Polymer, Vue, Knockout and any CSS library, e.g. Bootstrap.",
   "keywords": [
     "sortable",
     "reorder",
@@ -15,7 +17,8 @@
     "drag",
     "and",
     "drop",
-    "dnd"
+    "dnd",
+    "web-components"
   ],
   "license": "MIT",
   "ignore": [

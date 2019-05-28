@@ -30,7 +30,7 @@ class NewsImageInfoView extends InfoView {
 
         // templates
 
-        $mId = isset($_GET['id']) ? $_GET['id'] : 0;
+        $id = isset($_GET['id']) ? $_GET['id'] : 0;
 
         
 
@@ -38,34 +38,36 @@ class NewsImageInfoView extends InfoView {
         // $sBasePath = SITE_DIR . '/pub';
         // $sBasePath = WEB_DIR;
         
-        $sPath = isset($_GET['path']) ? $_GET['path'] : '';
+        $path = isset($_GET['path']) ? $_GET['path'] : '';
 
         // ???
-        $sUrl = '/' . str_replace(',', '/', $sPath);
-        // echo $sUrl;
-        $this->_renderer->assign('sUrl', $sUrl);
+        $url = '/' . str_replace(',', '/', $path);
+        // echo $url;
+        $this->_renderer->assign('url', $url);
 
-        // $aPath = explode(',', $sPath);
+        // $aPath = explode(',', $path);
         // foreach ($aPath as $pk => $path) {
         //     $tmp[] = $path;
         //     $aPathItems[] = array('url' => implode(',', $tmp), 'name' => $path);
         // }
 
         // images for news
-        $oImages = Dao::collection('news-image');
+        $images = Dao::collection('news-image');
 
-        $oImages->where('id_news', $mId);
-        $oImages->load(-1);
+        $images->where('id_news', $id);
+        $images->load(-1);
 
-        $aImages = $oImages->getRows();
+        // echo 'test';
 
-        $sContentPath = WEB_DIR . $sUrl;
+        // $aImages = $images->getRows();
+
+        // $sContentPath = WEB_DIR . $url;
 
         // $aAllContent = Folder::getContent($sContentPath, false);
         // $aImages = $aAllContent['files'];
 
         // print_r($aImages);
 
-        $this->_renderer->assign('aImages', $aImages);
+        $this->_renderer->assign('aImages', $images->getRows());
     }
 }

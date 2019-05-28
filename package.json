@@ -4,7 +4,8 @@
   "description": "squarezone admin",
   "main": "index.js",
   "dependencies": {
-    "bootstrap": "^4.0.0-beta"
+    "bootstrap": "^4.0.0-beta",
+    "moment": "^2.24.0"
   },
   "devDependencies": {
     "bootstrap": "^4.0.0-beta"

@@ -72,7 +72,7 @@ isis.events = {
             
             // be sure to send right form
             $.post(
-                $('article section form').attr('action'), $('article section form').serialize()
+                $('section form').attr('action'), $('section form').serialize()
             ).then(function(data) {
                 isis.funcs.hideButtonIndicator(self, 'Zapisano.');
 
@@ -109,7 +109,7 @@ isis.events = {
             
             // be sure to send right form
             $.post(
-                $('article section form').attr('action'), $('article section form').serialize()
+                $('section form').attr('action'), $('section form').serialize()
             ).then(function(data) {
                 isis.funcs.hideButtonIndicator(self, 'Zapisano.');
 
@@ -595,9 +595,9 @@ isis.events = {
     chooseImagesClickEvent: function() {
         // images for news
         $('[data-js=choose-images]').unbind().click(function() {
-            console.log('show images for news, articles, etc.');
+            console.log('show images for news');
             
-            var dialog = $('.dialog div'),
+            var dialog = $('.modal-dialog .modal-body'),
                 type = this.getAttribute('data-js-action'),
                 news = $('#form-id').val() || 0,
                 now = new Date(),
@@ -619,11 +619,11 @@ isis.events = {
             // console.log('news' + news + ', ' + conf.user.id);
 
             if (type == 'news') {
-                $('.dialog h3').text('Wybierz obrazy dla aktualności');
+                $('.modal-header h5').text('Wybierz obrazy dla aktualności');
                 url = base + '/' + type + '-image/' + news + '/' + path;
             }
             if (type == 'article') {
-                $('.dialog h3').text('Wybierz obrazy dla gry');
+                $('.modal-header h5').text('Wybierz obrazy dla gry');
                 path = 'assets,games,' + $('#form-abbr').val() + ',imgs';
                 url = base + '/' + type + '-image/' + news + '/' + path;
                 // url = base + '/file-manager/info-file-add/' + path;
@@ -634,6 +634,7 @@ isis.events = {
             // console.log(dialog.attr('data-response'));
             if (dialog.attr('data-response') != type) {
                 dialog.html(isis.funcs.getIndicator(true));
+                console.log('dialog...');
 
                 $.get(url, function(data) {
                     dialog.html($('article section', data).html());
@@ -659,7 +660,7 @@ isis.events = {
     chooseArticleImagesClickEvent: function() {
         // images for news
         $('[data-js=choose-article-images]').unbind().click(function() {
-            console.log('show images for news');
+            console.log('show images for articles');
             
             var dialog = $('.dialog div'),
                 type = this.getAttribute('data-js-action'),
@@ -679,13 +680,14 @@ isis.events = {
 
             console.log(path);
 
-            $('.dialog h3').text('Wybierz obrazy dla aktualności');
+            $('.modal-header h5').text('Wybierz obrazy dla aktualności');
 
             isis.funcs.showOverlay();
 
             // console.log(dialog.attr('data-response'));
             if (dialog.attr('data-response') != type) {
                 dialog.html(isis.funcs.getIndicator(true));
+                console.log('dialog...');
 
                 $.get(base + '/' + type + '-image/' + news + '/' + path, function(data) {
                     dialog.html($('article section', data).html());
@@ -712,9 +714,9 @@ isis.events = {
                 type = this.getAttribute('data-js-action');
 
             if (type == 'logo') {
-                $('.dialog h3').text('Wybierz logo');
+                $('.modal-header h5').text('Wybierz logo');
             } else {
-                $('.dialog h3').text('Wybierz główny obraz');
+                $('.modal-header h5').text('Wybierz główny obraz');
             }
 
             isis.funcs.showOverlay();

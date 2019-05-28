@@ -7,6 +7,9 @@ web/assets/*
 !/web/assets/site
 web/css
 web/tmp
+web/js/moment/*
+web/js/Pikaday/*
+web/js/Sortable/*
 
 bin
 node_modules
