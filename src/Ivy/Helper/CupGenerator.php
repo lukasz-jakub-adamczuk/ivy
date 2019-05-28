@@ -1,14 +1,17 @@
 <?php
 
-namespace Ivy\Controller;
+namespace Ivy\Helper;
 
-// namespace Aya\Core;
 use Aya\Core\Db;
 
-class CupController extends FrontController {
+class CupGenerator {
 
-    public function afterInsert($mId) {
-        $aPost = $this->beforeInsert();
+    public function generate($mId) {
+
+
+
+        die('generate');
+        $aPost = $this->preInsert();
 
         // print_r($aPost['tournament']);
 
