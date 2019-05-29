@@ -1,0 +1,6 @@
+[submodule "web/js/Pikaday"]
+	path = web/js/Pikaday
+	url = https://github.com/Pikaday/Pikaday.git
+[submodule "web/js/moment"]
+	path = web/js/moment
+	url = https://github.com/moment/moment.git
