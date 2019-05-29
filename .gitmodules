@@ -4,3 +4,6 @@
 [submodule "web/js/moment"]
 	path = web/js/moment
 	url = https://github.com/moment/moment.git
+[submodule "web/themes/startbootstrap-sb-admin-2"]
+	path = web/themes/startbootstrap-sb-admin-2
+	url = https://github.com/BlackrockDigital/startbootstrap-sb-admin-2.git
