@@ -7,3 +7,6 @@
 [submodule "web/themes/startbootstrap-sb-admin-2"]
 	path = web/themes/startbootstrap-sb-admin-2
 	url = https://github.com/BlackrockDigital/startbootstrap-sb-admin-2.git
+[submodule "web/js/Sortable"]
+	path = web/js/Sortable
+	url = https://github.com/SortableJS/Sortable.git
