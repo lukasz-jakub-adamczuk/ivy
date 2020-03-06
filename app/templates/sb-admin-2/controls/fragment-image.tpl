@@ -3,7 +3,7 @@
     <input id="{$type}-image-fragment-object-id" name="hidden[{$type}][id_object_fragment]" type="hidden" value="{$fragmentImage.{$type}.id_object_fragment|default:0}" />
     <div class="form-label">
         <label for="form-{$type}-fragment">Główny obraz</label>
-        <a data-js="choose-image-fragment" data-js-action="{$type}">Wybierz</a>
+        <a data-js="choose-image-fragment" data-js-action="{$type}" data-toggle="modal" data-target="#exampleModal">Wybierz</a>
     </div>
     <!-- <input id="{$type}-image-path" name="hidden[path]" type="hidden" value="{$sPath|default:''}" /> -->
     <div class="form-component">

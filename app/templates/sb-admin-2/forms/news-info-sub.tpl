@@ -1,21 +1,18 @@
-<section class="_col card">
+<section class="card">
     <div class="card-body">
         {include file='controls/authors.tpl'}
     </div>
     {include file='controls/section-buttons.tpl' publish=true}
 </section>
 
-<section class="_col card">
+<section class="card">
     <div class="card-body">
         {include file='controls/creation-date.tpl'}
         {include file='controls/modification-date.tpl'}
     </div>
 </section>
-<section class="_col card">
+<section class="card">
     <div class="card-body">
-        {*<div class="form-label">
-            <label>Opcje wyświetlania</label>
-        </div>*}
         <div class="form-group">
             {include file='controls/comments.tpl'}
             {include file='controls/visible.tpl'}

@@ -1,5 +1,5 @@
 <!-- <div class="row"> -->
-    <div class="form-component">
+    <div class="form-group">
         <label for="form-category">Kategoria</label>
         <select id="form-category" name="dataset[{$cpk}]" class="form-control">
         {foreach from=$categories item=c}

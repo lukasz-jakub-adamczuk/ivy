@@ -9,13 +9,13 @@
         </div>
         <input name="path" type="hidden" value="{$sPath}">
 
-        <ul class="list-group">
+        <div class="list-group">
             {foreach from=$list item=item key=ik}
-            <li class="list-group-item{if isset($item.unread)} list-group-item-secondary{/if}">
+            <div class="list-group-item{if isset($item.unread)} list-group-item-secondary unread{/if}">
             {if !$item.lock}
                 <input id="item-{$ik}" name="ids[]" type="checkbox" value="{$item.hash|default:'null'}" class="list-checkbox mass-checkbox">
             {/if}
-                <div>
+                <label for="item-{$ik}" class="list-label">
                     <div class="list-header">
                         <time class="gray">{$item.date|default:'unknown'}</time>
                         {if $item.lock}
@@ -26,19 +26,20 @@
                         <!-- <span>Nie możesz zobaczyć tego newsa, bo ktoś już pracuje nad tym tematem.</span> -->
                         <a href="{$item.link|default:'unknown'}" class="dark mobile-single-line">{$item.title|default:'unknown'}</a>
                     </div>
-                    <label for="item-{$ik}" class="list-label">{$item.desc|default:'...'}
-                        <p class="relative">
+                    {if $item.desc}<p class="mb-1">{$item.desc}</p>{/if}
+                    {* <label for="item-{$ik}" class="list-label">{$item.desc|default:'...'} *}
+                        <small class="text-muted">
                         {if !$item.lock}
                             <a href="{$base}/{$ctrl}/{$sPath}/mark/{$item.hash|default:'null'}" data-js="mark">Oznacz jako przeczytany</a>
                         {/if}
                         <a href="{$base}/{$ctrl}/{$sPath}/repost/{$item.hash|default:'null'}">Opublikuj</a>
-                        </p>
-                    </label>
+                        </small>
+                </label>
                     
-                </div>
-            </li>
+                {* </div> *}
+            </div>
             {/foreach}
-        </ul>
+        </div>
         
         <div class="nav-bar border-bottom bg-almost-white">
             {include file='partials/mass-actions.tpl'}

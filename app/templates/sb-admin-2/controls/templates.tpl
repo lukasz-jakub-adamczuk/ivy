@@ -1,5 +1,5 @@
 <!-- <div class="row"> -->
-    <div class="form-component">
+    <div class="form-group">
         <label for="form-template">Szablon</label>
         <select id="form-template" name="dataset[{$tpk}]" class="form-control">
         {foreach from=$templates item=t}

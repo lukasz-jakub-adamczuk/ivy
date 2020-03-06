@@ -10,8 +10,8 @@
 <section class="card">
     <div class="card-body">
         {include file='controls/authors.tpl'}
-        {include file='controls/categories.tpl' cpk='id_article_category'}
-        {include file='controls/templates.tpl' tpk='id_article_template'}
+        {include file='controls/categories.tpl' cpk='id_story_category'}
+        {* {include file='controls/templates.tpl' tpk='id_article_template'} *}
     </div>
 </section>
 <section class="card">
